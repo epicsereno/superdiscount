@@ -475,6 +475,11 @@ h3 {
     object-fit: cover;
 }
 
+.photo-grid figure:nth-child(1) img,
+.photo-grid figure:nth-child(2) img {
+    object-position: center 18%;
+}
+
 .photo-grid figure:nth-child(3) img {
     padding: 1.25rem;
     object-fit: contain;
