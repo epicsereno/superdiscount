@@ -513,6 +513,46 @@ h3 {
     box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
+.hero-services {
+    width: min(980px, 100%);
+    margin: 1.5rem auto 0;
+    padding: 1.25rem;
+    color: var(--ink);
+    background:
+        linear-gradient(90deg, rgba(255, 213, 31, 0.22) 1px, transparent 1px) 0 0 / 18px 18px,
+        #ffffff;
+    border: 4px solid #111111;
+    border-radius: 3px;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hero-services .section-heading {
+    margin-bottom: 1.1rem;
+}
+
+.hero-services .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.35rem 0.55rem;
+    color: #ffffff;
+    background: var(--brand);
+    border: 2px solid #111111;
+    box-shadow: 3px 3px 0 var(--gold);
+}
+
+.hero-services h2 {
+    margin-bottom: 0;
+    color: var(--blue);
+    font-size: clamp(1.8rem, 3.8vw, 3rem);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 var(--gold);
+}
+
+.hero-services .service-card {
+    min-height: 210px;
+    text-align: left;
+}
+
 .photo-grid figcaption {
     position: absolute;
     right: 0.75rem;
