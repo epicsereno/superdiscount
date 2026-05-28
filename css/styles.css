@@ -1,14 +1,15 @@
 :root {
-    --ink: #1f2528;
-    --muted: #667077;
+    --ink: #171717;
+    --muted: #5f5f5f;
     --surface: #ffffff;
-    --soft: #f6f2e8;
-    --line: #e5ded2;
-    --brand: #d71920;
+    --soft: #fff1c7;
+    --line: #191919;
+    --brand: #e31b23;
     --brand-dark: #a80f15;
-    --gold: #f7c948;
-    --green: #1f7a4d;
-    --shadow: 0 18px 45px rgba(20, 20, 20, 0.12);
+    --gold: #ffd51f;
+    --green: #0f8a4b;
+    --blue: #1657c8;
+    --shadow: 8px 8px 0 rgba(20, 20, 20, 0.18);
 }
 
 * {
@@ -24,7 +25,10 @@ body {
     color: var(--ink);
     font-family: "Poppins", Arial, sans-serif;
     line-height: 1.6;
-    background: var(--surface);
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px) 0 0 / 28px 28px,
+        var(--surface);
 }
 
 body.menu-open {
@@ -71,7 +75,7 @@ a {
     z-index: 1000;
     width: 100%;
     color: #ffffff;
-    background: rgba(19, 23, 25, 0.92);
+    background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -102,7 +106,7 @@ a {
     color: var(--gold);
     font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.08em;
 }
 
 .logo strong {
@@ -167,8 +171,8 @@ a {
 .hero {
     position: relative;
     display: grid;
-    min-height: 92vh;
-    padding: 9rem 1rem 3rem;
+    min-height: 94vh;
+    padding: 8.5rem 1rem 2.6rem;
     overflow: hidden;
     color: #ffffff;
     place-items: center;
@@ -178,22 +182,24 @@ a {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(16, 16, 16, 0.9), rgba(16, 16, 16, 0.52), rgba(16, 16, 16, 0.82)),
+        radial-gradient(circle at 70% 30%, rgba(255, 213, 31, 0.22), transparent 24rem),
+        linear-gradient(90deg, rgba(13, 13, 13, 0.94), rgba(13, 13, 13, 0.48), rgba(13, 13, 13, 0.86)),
         url("../assets/images/storefront.png") center/cover;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    width: min(960px, 100%);
+    width: min(1040px, 100%);
     text-align: center;
 }
 
 .hero-sign {
-    width: min(430px, 88vw);
-    margin: 0 auto 1.4rem;
-    border-radius: 6px;
-    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.3);
+    width: min(460px, 88vw);
+    margin: 0 auto 1.15rem;
+    border: 4px solid #111111;
+    border-radius: 3px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.42);
 }
 
 .eyebrow {
@@ -201,7 +207,7 @@ a {
     color: var(--green);
     font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
@@ -217,10 +223,11 @@ p {
 }
 
 h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     color: var(--gold);
     font-size: clamp(3rem, 9vw, 6.8rem);
     line-height: 0.9;
+    text-shadow: 5px 5px 0 #111111;
     text-transform: uppercase;
 }
 
@@ -237,9 +244,11 @@ h3 {
 }
 
 .hero-copy {
-    width: min(700px, 100%);
-    margin: 0 auto 1.7rem;
+    width: min(790px, 100%);
+    margin: 0 auto 1.35rem;
     font-size: clamp(1rem, 2vw, 1.28rem);
+    font-weight: 700;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .hero-actions,
@@ -256,8 +265,8 @@ h3 {
     justify-content: center;
     min-height: 48px;
     padding: 0.8rem 1.2rem;
-    border: 2px solid transparent;
-    border-radius: 8px;
+    border: 3px solid #111111;
+    border-radius: 4px;
     font-weight: 800;
     text-decoration: none;
     transition: transform 180ms ease, background 180ms ease, color 180ms ease;
@@ -271,6 +280,7 @@ h3 {
 .btn-primary {
     color: #ffffff;
     background: var(--brand);
+    box-shadow: 5px 5px 0 var(--gold);
 }
 
 .btn-primary:hover,
@@ -281,6 +291,40 @@ h3 {
 .btn-secondary {
     color: #111111;
     background: var(--gold);
+    box-shadow: 5px 5px 0 var(--brand);
+}
+
+.sign-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+    width: min(920px, 100%);
+    margin: 1.7rem auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sign-wall li {
+    padding: 0.42rem 0.7rem;
+    color: #111111;
+    font-size: 0.78rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    background: var(--gold);
+    border: 2px solid #111111;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
+}
+
+.sign-wall li:nth-child(3n) {
+    color: #ffffff;
+    background: var(--brand);
+}
+
+.sign-wall li:nth-child(3n + 1) {
+    color: #ffffff;
+    background: var(--blue);
 }
 
 .store-strip {
@@ -288,16 +332,16 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     width: min(880px, 100%);
-    margin: 3rem auto 0;
+    margin: 2rem auto 0;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    border-radius: 8px;
+    border: 3px solid rgba(255, 255, 255, 0.72);
+    border-radius: 3px;
 }
 
 .store-strip div {
     padding: 1rem;
-    background: rgba(10, 10, 10, 0.5);
+    background: rgba(10, 10, 10, 0.68);
 }
 
 .store-strip dt {
@@ -318,7 +362,7 @@ h3 {
 }
 
 .section-heading {
-    width: min(700px, 100%);
+    width: min(760px, 100%);
     margin: 0 auto 2.3rem;
     text-align: center;
 }
@@ -326,16 +370,20 @@ h3 {
 .service-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .service-card {
     min-height: 260px;
     padding: 1.5rem;
     background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(20, 20, 20, 0.07);
+    border: 3px solid var(--line);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+}
+
+.service-card:nth-child(even) {
+    background: #fff7d7;
 }
 
 .service-icon {
@@ -347,7 +395,8 @@ h3 {
     font-size: 1.3rem;
     font-weight: 800;
     background: var(--brand);
-    border-radius: 8px;
+    border: 2px solid #111111;
+    border-radius: 3px;
     place-items: center;
 }
 
@@ -359,7 +408,9 @@ h3 {
 
 .about-section,
 .contact-section {
-    background: var(--soft);
+    background:
+        linear-gradient(135deg, rgba(227, 27, 35, 0.08) 25%, transparent 25%) 0 0 / 24px 24px,
+        var(--soft);
 }
 
 .about-layout,
@@ -398,13 +449,13 @@ h3 {
     position: absolute;
     left: 0;
     color: var(--green);
-    content: "✓";
+    content: "+";
 }
 
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .photo-grid figure {
@@ -412,7 +463,8 @@ h3 {
     min-height: 360px;
     margin: 0;
     overflow: hidden;
-    border-radius: 8px;
+    border: 4px solid #111111;
+    border-radius: 3px;
     background: #dddddd;
     box-shadow: var(--shadow);
 }
@@ -438,7 +490,8 @@ h3 {
     font-size: 0.85rem;
     font-weight: 800;
     background: rgba(0, 0, 0, 0.72);
-    border-radius: 8px;
+    border: 2px solid var(--gold);
+    border-radius: 3px;
 }
 
 .location-layout {
@@ -458,8 +511,8 @@ address {
 .map-panel {
     min-height: 430px;
     overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    border: 4px solid var(--line);
+    border-radius: 3px;
     box-shadow: var(--shadow);
 }
 
@@ -474,8 +527,9 @@ address {
     grid-template-columns: 1fr auto;
     padding: 2rem;
     background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    border: 4px solid var(--line);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
 }
 
 .contact-panel h2 {
