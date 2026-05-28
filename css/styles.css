@@ -178,8 +178,8 @@ a {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(16, 16, 16, 0.88), rgba(16, 16, 16, 0.58), rgba(16, 16, 16, 0.82)),
-        url("https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1800&q=80") center/cover;
+        linear-gradient(90deg, rgba(16, 16, 16, 0.9), rgba(16, 16, 16, 0.52), rgba(16, 16, 16, 0.82)),
+        url("../assets/images/storefront.png") center/cover;
 }
 
 .hero-content {
@@ -187,6 +187,13 @@ a {
     z-index: 1;
     width: min(960px, 100%);
     text-align: center;
+}
+
+.hero-sign {
+    width: min(430px, 88vw);
+    margin: 0 auto 1.4rem;
+    border-radius: 6px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.3);
 }
 
 .eyebrow {
@@ -365,7 +372,7 @@ h3 {
 }
 
 .about-layout {
-    grid-template-columns: minmax(0, 0.85fr) minmax(380px, 1fr);
+    grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1fr);
 }
 
 .lead {
@@ -396,7 +403,7 @@ h3 {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -414,6 +421,12 @@ h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.photo-grid figure:nth-child(3) img {
+    padding: 1.25rem;
+    object-fit: contain;
+    background: #f4d423;
 }
 
 .photo-grid figcaption {
@@ -539,7 +552,7 @@ address {
     }
 
     .photo-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .contact-panel,
