@@ -245,7 +245,7 @@ h3 {
 
 .hero-copy {
     width: min(790px, 100%);
-    margin: 0 auto 1.35rem;
+    margin: 0 auto 1.1rem;
     font-size: clamp(1rem, 2vw, 1.28rem);
     font-weight: 700;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
@@ -423,7 +423,8 @@ h3 {
 }
 
 .about-layout {
-    grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1fr);
+    grid-template-columns: minmax(0, 820px);
+    justify-content: center;
 }
 
 .lead {
@@ -484,6 +485,16 @@ h3 {
     padding: 1.25rem;
     object-fit: contain;
     background: #f4d423;
+}
+
+.hero-photo-grid {
+    width: min(850px, 100%);
+    margin: 0 auto 1.35rem;
+}
+
+.hero-photo-grid figure {
+    min-height: 190px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .photo-grid figcaption {
