@@ -488,12 +488,28 @@ h3 {
 }
 
 .hero-photo-grid {
-    width: min(850px, 100%);
-    margin: 0 auto 1.35rem;
+    grid-template-columns: 1fr;
+    width: min(620px, 100%);
+    margin: 0 auto 1.15rem;
 }
 
 .hero-photo-grid figure {
-    min-height: 190px;
+    min-height: 260px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hero-store-actions {
+    margin-bottom: 1.25rem;
+}
+
+.hero-secondary-photos {
+    grid-template-columns: repeat(2, 1fr);
+    width: min(620px, 100%);
+    margin: 0 auto;
+}
+
+.hero-secondary-photos figure {
+    min-height: 160px;
     box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
