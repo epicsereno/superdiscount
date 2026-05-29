@@ -95,23 +95,28 @@ a {
 
 .logo {
     display: inline-flex;
-    flex-direction: column;
-    color: #ffffff;
-    line-height: 0.95;
+    align-items: center;
+    width: clamp(140px, 15vw, 180px);
+    height: 54px;
+    background: url("../assets/images/sign.png") center/contain no-repeat;
     text-decoration: none;
-    text-transform: uppercase;
+    transition: transform 180ms ease;
 }
 
-.logo span {
-    color: var(--gold);
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+.logo:hover {
+    transform: scale(1.05);
 }
 
+.logo span,
 .logo strong {
-    font-size: 1.6rem;
-    font-weight: 800;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .nav-links {
@@ -190,16 +195,11 @@ a {
 .hero-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: min(1040px, 100%);
     text-align: center;
-}
-
-.hero-sign {
-    width: min(460px, 88vw);
-    margin: 0 auto 1.15rem;
-    border: 4px solid #111111;
-    border-radius: 3px;
-    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.42);
 }
 
 .eyebrow {
@@ -254,8 +254,10 @@ h3 {
 .hero-actions,
 .inline-actions {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 1.2rem;
+    align-items: center;
     justify-content: center;
 }
 
