@@ -1,5 +1,6 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#nav-links");
+const siteHeader = document.querySelector(".site-header");
 
 if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
@@ -16,4 +17,13 @@ if (menuToggle && navLinks) {
             document.body.classList.remove("menu-open");
         }
     });
+}
+
+if (siteHeader) {
+    const syncHeaderShadow = () => {
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 4);
+    };
+
+    syncHeaderShadow();
+    window.addEventListener("scroll", syncHeaderShadow, { passive: true });
 }
