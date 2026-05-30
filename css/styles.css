@@ -1,13 +1,14 @@
 :root {
-    --color-primary: #F5C400;
-    --color-secondary: #C0392B;
-    --color-background: #FAF7F2;
+    --color-primary: #D72B2B;
+    --color-secondary: #F5C518;
+    --color-background: #F9F6F0;
     --color-text: #1A1A1A;
     --color-accent: #1B2A4A;
     --color-muted: #5B5650;
     --color-surface: #FFFFFF;
     --color-line: #1A1A1A;
     --shadow-sign: 7px 7px 0 rgba(26, 26, 26, 0.18);
+    --shadow-lift: 0 8px 24px rgba(26, 26, 26, 0.12);
 }
 
 * {
@@ -68,7 +69,7 @@ a {
     padding: 0.75rem 1rem;
     clip: auto;
     color: var(--color-background);
-    background: var(--color-secondary);
+    background: var(--color-primary);
 }
 
 .site-header {
@@ -77,7 +78,7 @@ a {
     z-index: 1000;
     color: var(--color-background);
     background: var(--color-text);
-    border-bottom: 4px solid var(--color-primary);
+    border-bottom: 4px solid var(--color-secondary);
     transition: box-shadow 180ms ease;
 }
 
@@ -102,20 +103,21 @@ a {
     display: inline-flex;
     flex-direction: column;
     color: var(--color-background);
-    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-family: "Bebas Neue", Impact, sans-serif;
     line-height: 0.9;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 .logo span {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.08em;
 }
 
 .logo strong {
+    color: var(--color-primary);
     font-size: 1.85rem;
     font-weight: 800;
 }
@@ -203,7 +205,9 @@ a {
     background:
         linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.16) 44%, rgba(0, 0, 0, 0.04)),
         linear-gradient(90deg, rgba(26, 26, 26, 0.68), rgba(26, 26, 26, 0.22) 52%, rgba(26, 26, 26, 0.54)),
+        url("../assets/images/storefront.webp") center/cover,
         url("../assets/images/storefront.png") center/cover;
+    background-color: var(--color-primary);
 }
 
 .hero-content {
@@ -214,8 +218,8 @@ a {
 
 .eyebrow {
     margin: 0 0 0.75rem;
-    color: var(--color-secondary);
-    font-family: "Barlow Condensed", Impact, sans-serif;
+    color: var(--color-primary);
+    font-family: "Bebas Neue", Impact, sans-serif;
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -227,7 +231,7 @@ a {
     display: inline-block;
     padding-left: 0.8rem;
     color: var(--color-background);
-    border-left: 5px solid var(--color-secondary);
+    border-left: 5px solid var(--color-primary);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
@@ -241,7 +245,8 @@ p {
 h1,
 h2,
 h3 {
-    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: 0.05em;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -249,7 +254,7 @@ h3 {
 h1 {
     max-width: 900px;
     margin-bottom: 0.85rem;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-size: clamp(4.2rem, 12vw, 9rem);
     line-height: 0.86;
     text-shadow: 5px 5px 0 var(--color-text);
@@ -289,7 +294,7 @@ h3 {
     min-height: 50px;
     padding: 14px 28px;
     color: var(--color-text);
-    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-family: "Bebas Neue", Impact, sans-serif;
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -308,25 +313,26 @@ h3 {
 }
 
 .btn-primary {
+    color: var(--color-background);
     background: var(--color-primary);
     box-shadow: 5px 5px 0 var(--color-secondary);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-    color: var(--color-background);
+    color: var(--color-text);
     background: var(--color-secondary);
 }
 
 .btn-secondary {
-    color: var(--color-background);
-    background: var(--color-accent);
+    color: var(--color-text);
+    background: var(--color-secondary);
     box-shadow: 5px 5px 0 var(--color-primary);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-    color: var(--color-text);
+    color: var(--color-background);
     background: var(--color-primary);
 }
 
@@ -346,19 +352,19 @@ h3 {
 .sign-wall li {
     padding: 0.42rem 0.7rem;
     color: var(--color-text);
-    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-family: "Bebas Neue", Impact, sans-serif;
     font-size: 0.98rem;
     font-weight: 800;
     line-height: 1;
     text-transform: uppercase;
-    background: var(--color-primary);
+    background: var(--color-secondary);
     border: 2px solid var(--color-line);
     box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
 }
 
 .sign-wall li:nth-child(3n) {
     color: var(--color-background);
-    background: var(--color-secondary);
+    background: var(--color-primary);
 }
 
 .sign-wall li:nth-child(3n + 1) {
@@ -383,8 +389,8 @@ h3 {
 }
 
 .store-strip dt {
-    color: var(--color-primary);
-    font-family: "Barlow Condensed", Impact, sans-serif;
+    color: var(--color-secondary);
+    font-family: "Bebas Neue", Impact, sans-serif;
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -415,42 +421,53 @@ h3 {
 }
 
 .service-card {
+    position: relative;
     min-height: 268px;
     padding: 1.35rem;
+    overflow: hidden;
     background: var(--color-surface);
     border: 3px solid var(--color-line);
+    border-left: 6px solid var(--color-secondary);
     box-shadow: var(--shadow-sign);
+    transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
 .service-card:nth-child(even) {
     background: #FFF4BF;
 }
 
-.service-icon {
-    display: inline-grid;
-    width: 52px;
-    height: 52px;
+.service-card:hover,
+.service-card:focus-within {
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-2px);
+}
+
+.service-card::after {
+    position: absolute;
+    right: -0.18rem;
+    bottom: -0.6rem;
+    color: rgba(215, 43, 43, 0.08);
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 9rem;
+    line-height: 0.8;
+    content: attr(data-number);
+}
+
+.card-number {
+    position: relative;
+    z-index: 1;
+    display: block;
     margin-bottom: 1.15rem;
     color: var(--color-primary);
-    background: var(--color-text);
-    border: 3px solid var(--color-line);
-    place-items: center;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 3.4rem;
+    line-height: 0.85;
 }
 
-.service-icon svg {
-    width: 28px;
-    height: 28px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.service-card:nth-child(2) .service-icon,
-.service-card:nth-child(4) .service-icon {
-    color: var(--color-text);
-    background: var(--color-primary);
+.service-card h3,
+.service-card p {
+    position: relative;
+    z-index: 1;
 }
 
 .service-card p {
@@ -458,16 +475,15 @@ h3 {
     color: var(--color-muted);
 }
 
-.about-section,
-.contact-section {
+.about-section {
+    color: var(--color-background);
     background:
-        linear-gradient(135deg, rgba(192, 57, 43, 0.08) 25%, transparent 25%) 0 0 / 24px 24px,
-        #FFF3CF;
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%) 0 0 / 24px 24px,
+        var(--color-primary);
 }
 
 .about-layout,
 .location-layout,
-.contact-panel,
 .footer-layout {
     display: grid;
     align-items: center;
@@ -480,8 +496,19 @@ h3 {
 }
 
 .lead {
-    color: var(--color-muted);
+    color: rgba(249, 246, 240, 0.86);
     font-size: 1.13rem;
+}
+
+.pull-quote {
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: clamp(3rem, 7vw, 5.7rem);
+    letter-spacing: 0.05em;
+    line-height: 0.88;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 rgba(26, 26, 26, 0.25);
 }
 
 .check-list {
@@ -495,8 +522,18 @@ h3 {
 .check-list li {
     padding: 0.8rem 0.95rem;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.62);
-    border-left: 3px solid var(--color-primary);
+    background: rgba(26, 26, 26, 0.2);
+    border-left: 3px solid var(--color-secondary);
+}
+
+.location-section {
+    color: var(--color-background);
+    background: var(--color-text);
+}
+
+.location-section .eyebrow,
+.location-section h2 {
+    color: var(--color-secondary);
 }
 
 .location-layout {
@@ -509,11 +546,16 @@ address {
     font-weight: 700;
 }
 
+.location-note {
+    color: rgba(249, 246, 240, 0.82);
+}
+
 .map-panel {
     min-height: 430px;
     overflow: hidden;
-    border: 4px solid var(--color-line);
-    box-shadow: var(--shadow-sign);
+    background: var(--color-primary);
+    border: 4px solid var(--color-secondary);
+    box-shadow: 7px 7px 0 rgba(245, 197, 24, 0.22);
 }
 
 .map-panel iframe {
@@ -521,32 +563,6 @@ address {
     width: 100%;
     height: 430px;
     border: 0;
-}
-
-.contact-panel {
-    grid-template-columns: 1fr auto;
-    padding: 2rem;
-    background: var(--color-surface);
-    border: 4px solid var(--color-line);
-    box-shadow: var(--shadow-sign);
-}
-
-.contact-panel h2 {
-    margin-bottom: 0.4rem;
-}
-
-.contact-panel p:last-child {
-    margin-bottom: 0;
-}
-
-.phone-link {
-    color: var(--color-secondary);
-    font-family: "Barlow Condensed", Impact, sans-serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 800;
-    line-height: 1;
-    text-decoration: none;
-    white-space: nowrap;
 }
 
 .site-footer {
@@ -610,12 +626,10 @@ address {
     .service-grid,
     .about-layout,
     .location-layout,
-    .contact-panel,
     .footer-layout {
         grid-template-columns: 1fr;
     }
 
-    .contact-panel,
     .footer-layout {
         align-items: start;
     }
@@ -636,7 +650,9 @@ address {
         background:
             linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.18) 50%, rgba(0, 0, 0, 0.08)),
             linear-gradient(90deg, rgba(26, 26, 26, 0.64), rgba(26, 26, 26, 0.2)),
+            url("../assets/images/storefront.webp") center/cover,
             url("../assets/images/storefront.png") center/cover;
+        background-color: var(--color-primary);
     }
 
     h1 {
@@ -675,11 +691,4 @@ address {
         height: 300px;
     }
 
-    .contact-panel {
-        padding: 1.25rem;
-    }
-
-    .phone-link {
-        white-space: normal;
-    }
 }
