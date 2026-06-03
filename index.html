@@ -89,7 +89,10 @@
 
     <main id="main">
         <section id="home" class="hero">
-            <div class="hero-media" aria-hidden="true"></div>
+            <picture class="hero-media">
+                <source srcset="assets/images/storefront.webp" type="image/webp">
+                <img src="assets/images/storefront.png" alt="Super Discount storefront on North Eastern Avenue in El Sereno" width="1600" height="1067" fetchpriority="high">
+            </picture>
             <div class="hero-content">
                 <p class="eyebrow">El Sereno One-Stop Shop</p>
                 <h1>Super Discount</h1>
@@ -97,6 +100,7 @@
                 <div class="hero-store-actions">
                     <div class="hero-actions" aria-label="Store actions">
                         <a href="tel:+13232238115" class="btn btn-primary">Call (323) 223-8115</a>
+                        <a href="https://wa.me/13232238115" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                         <a href="https://www.google.com/maps/dir/?api=1&destination=3118+N+Eastern+Ave+Los+Angeles+CA+90032" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get Directions</a>
                     </div>
                     <ul class="sign-wall" aria-label="Store inventory highlights">
@@ -172,6 +176,40 @@
                         <li>A lived-in storefront built around access, variety, and quick decisions</li>
                     </ul>
                 </div>
+                <figure class="about-photo">
+                    <picture>
+                        <source srcset="assets/images/frontdoor.webp" type="image/webp">
+                        <img src="assets/images/frontdoor.png" alt="Front door and window signs at Super Discount" width="1200" height="1600" loading="lazy">
+                    </picture>
+                    <figcaption>Front door on North Eastern Avenue</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="specials" class="section specials-section">
+            <div class="container specials-layout">
+                <div>
+                    <p class="eyebrow">This Week</p>
+                    <h2>Call ahead for party rentals and rotating finds</h2>
+                    <p class="lead dark-lead">Tables, chairs, balloons, seasonal goods, snacks, and window finds move fast. A quick call or WhatsApp message is the easiest way to check what is ready today.</p>
+                </div>
+                <div class="specials-panel" aria-label="Weekly specials and rental reminders">
+                    <article>
+                        <span>Rentals</span>
+                        <h3>Tables & Chairs</h3>
+                        <p>Reserve early for weekend parties, cookouts, and birthdays.</p>
+                    </article>
+                    <article>
+                        <span>Counter</span>
+                        <h3>Balloons & Decor</h3>
+                        <p>Ask what colors, numbers, and seasonal supplies are in stock.</p>
+                    </article>
+                    <article>
+                        <span>Quick Stop</span>
+                        <h3>ATM & EBT</h3>
+                        <p>Handle errands in one neighborhood stop.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -189,6 +227,7 @@
                     <p class="location-note">Call ahead for tables, chairs, balloons, seasonal items, or anything specific.</p>
                     <div class="inline-actions">
                         <a href="tel:+13232238115" class="btn btn-primary">Call (323) 223-8115</a>
+                        <a href="https://wa.me/13232238115" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                         <a href="https://www.google.com/maps/search/?api=1&query=Super+Discount+3118+N+Eastern+Ave+Los+Angeles+CA+90032" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open Map</a>
                     </div>
                 </div>
@@ -212,6 +251,7 @@
             <p><strong>Super Discount</strong><br>3118 N Eastern Ave, Los Angeles, CA 90032</p>
             <p><strong>Hours</strong><br>9:30 AM-9 PM daily</p>
             <p><a href="tel:+13232238115">(323) 223-8115</a></p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Super+Discount+3118+N+Eastern+Ave+Los+Angeles+CA+90032" target="_blank" rel="noopener noreferrer">Google Maps</a></p>
             <p>&copy; 2026 Super Discount El Sereno.</p>
         </div>
     </footer>

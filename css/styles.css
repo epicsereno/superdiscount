@@ -202,12 +202,24 @@ a {
 .hero-media {
     position: absolute;
     inset: 0;
+    display: block;
+    overflow: hidden;
+    background-color: var(--color-primary);
+}
+
+.hero-media::after {
+    position: absolute;
+    inset: 0;
+    content: "";
     background:
         linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.16) 44%, rgba(0, 0, 0, 0.04)),
-        linear-gradient(90deg, rgba(26, 26, 26, 0.68), rgba(26, 26, 26, 0.22) 52%, rgba(26, 26, 26, 0.54)),
-        url("../assets/images/storefront.webp") center/cover,
-        url("../assets/images/storefront.png") center/cover;
-    background-color: var(--color-primary);
+        linear-gradient(90deg, rgba(26, 26, 26, 0.68), rgba(26, 26, 26, 0.22) 52%, rgba(26, 26, 26, 0.54));
+}
+
+.hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-content {
@@ -432,6 +444,22 @@ h3 {
     transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
+.service-card.reveal-card {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 420ms ease, box-shadow 180ms ease, transform 420ms ease;
+}
+
+.service-card.reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card.reveal-card.is-visible:hover,
+.service-card.reveal-card.is-visible:focus-within {
+    transform: translateY(-2px);
+}
+
 .service-card:nth-child(even) {
     background: #FFF4BF;
 }
@@ -491,8 +519,7 @@ h3 {
 }
 
 .about-layout {
-    grid-template-columns: minmax(0, 850px);
-    justify-content: center;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.65fr);
 }
 
 .lead {
@@ -524,6 +551,95 @@ h3 {
     font-weight: 700;
     background: rgba(26, 26, 26, 0.2);
     border-left: 3px solid var(--color-secondary);
+}
+
+.about-photo {
+    margin: 0;
+    overflow: hidden;
+    color: var(--color-text);
+    background: var(--color-secondary);
+    border: 4px solid var(--color-text);
+    box-shadow: 8px 8px 0 rgba(26, 26, 26, 0.28);
+    transform: rotate(1deg);
+}
+
+.about-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.about-photo figcaption {
+    padding: 0.55rem 0.75rem;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.specials-section {
+    background:
+        linear-gradient(90deg, rgba(26, 26, 26, 0.06) 1px, transparent 1px) 0 0 / 28px 28px,
+        var(--color-background);
+}
+
+.specials-layout {
+    display: grid;
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.dark-lead {
+    color: var(--color-muted);
+}
+
+.specials-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.specials-panel article {
+    min-height: 210px;
+    padding: 1.2rem;
+    background: var(--color-surface);
+    border: 3px solid var(--color-line);
+    box-shadow: var(--shadow-sign);
+}
+
+.specials-panel article:nth-child(2) {
+    background: var(--color-secondary);
+}
+
+.specials-panel article:nth-child(3) {
+    color: var(--color-background);
+    background: var(--color-accent);
+}
+
+.specials-panel span {
+    display: inline-block;
+    margin-bottom: 1.1rem;
+    padding: 0.3rem 0.48rem;
+    color: var(--color-background);
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-transform: uppercase;
+    background: var(--color-primary);
+}
+
+.specials-panel h3 {
+    font-size: 1.95rem;
+}
+
+.specials-panel p {
+    margin-bottom: 0;
+    font-weight: 700;
 }
 
 .location-section {
@@ -573,7 +689,7 @@ address {
 }
 
 .footer-layout {
-    grid-template-columns: 1fr auto auto auto;
+    grid-template-columns: 1fr auto auto auto auto;
     align-items: end;
 }
 
@@ -625,6 +741,7 @@ address {
 
     .service-grid,
     .about-layout,
+    .specials-layout,
     .location-layout,
     .footer-layout {
         grid-template-columns: 1fr;
@@ -646,13 +763,10 @@ address {
         padding: 3.6rem 0.75rem 1.5rem;
     }
 
-    .hero-media {
+    .hero-media::after {
         background:
             linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.18) 50%, rgba(0, 0, 0, 0.08)),
-            linear-gradient(90deg, rgba(26, 26, 26, 0.64), rgba(26, 26, 26, 0.2)),
-            url("../assets/images/storefront.webp") center/cover,
-            url("../assets/images/storefront.png") center/cover;
-        background-color: var(--color-primary);
+            linear-gradient(90deg, rgba(26, 26, 26, 0.64), rgba(26, 26, 26, 0.2));
     }
 
     h1 {
@@ -682,6 +796,18 @@ address {
     }
 
     .service-card {
+        min-height: auto;
+    }
+
+    .about-photo {
+        transform: none;
+    }
+
+    .specials-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .specials-panel article {
         min-height: auto;
     }
 
