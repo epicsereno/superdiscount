@@ -31,14 +31,23 @@
     </script>
 </head>
 <body>
+    <div class="announcement-bar">
+        <div class="container">
+            <p data-i18n="banner_deal"><strong>DEAL OF THE WEEK:</strong> 20% Off All Party Balloons! 🎈</p>
+        </div>
+    </div>
+
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
-            <a class="logo" href="#home" aria-label="Super Discount home">
-                <span>Super</span>
-                <strong>Discount</strong>
-            </a>
+            <div class="brand-group">
+                <a class="logo" href="#home" aria-label="Super Discount home">
+                    <span>Super</span>
+                    <strong>Discount</strong>
+                </a>
+                <div id="open-status" class="status-badge" aria-live="polite">Checking...</div>
+            </div>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
@@ -46,10 +55,11 @@
                 <span class="sr-only">Menu</span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#location">Location</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#location" data-i18n="nav_location">Location</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                <li><button id="lang-toggle" class="lang-btn">ESP</button></li>
             </ul>
         </nav>
     </header>
@@ -58,12 +68,12 @@
         <section id="home" class="hero">
             <div class="hero-media" aria-hidden="true"></div>
             <div class="hero-content">
-                <p class="eyebrow">El Sereno One-Stop Shop</p>
-                <h1>Super Discount</h1>
+                <p class="eyebrow" data-i18n="hero_eyebrow">El Sereno One-Stop Shop</p>
+                <h1 data-i18n="hero_h1">Super Discount</h1>
                 <div class="hero-store-actions">
                     <div class="hero-actions" aria-label="Store actions">
-                        <a href="tel:+13232238115" class="btn btn-primary">Call (323) 223-8115</a>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=3118+N+Eastern+Ave+Los+Angeles+CA+90032" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get Directions</a>
+                        <a href="tel:+13232238115" class="btn btn-primary" data-i18n="call">Call (323) 223-8115</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=3118+N+Eastern+Ave+Los+Angeles+CA+90032" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="get_directions">Get Directions</a>
                     </div>
                     <ul class="sign-wall" aria-label="Store inventory highlights">
                         <li>Party Supplies</li>
@@ -102,31 +112,81 @@
         <section id="services" class="section">
             <div class="container">
                 <div class="section-heading">
-                    <p class="eyebrow">Window-To-Window Convenience</p>
-                    <h2>Dense aisles, loud signs, fast neighborhood errands</h2>
+                    <p class="eyebrow" data-i18n="services_eyebrow">Window-To-Window Convenience</p>
+                    <h2 data-i18n="services_h2">Dense aisles, loud signs, fast neighborhood errands</h2>
                 </div>
                 <div class="service-grid">
                     <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">$</span>
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        </div>
                         <h3>Everyday Essentials</h3>
                         <p>Cleaning supplies, paper goods, batteries, snacks, drinks, toys, and basic household items in a compact stop.</p>
                     </article>
                     <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">*</span>
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 0 12 0"/><path d="m12 15 3.5 3.5"/><path d="m15 18 1.5 1.5"/><path d="M12 15 8.5 18.5"/><path d="m8.5 18.5-1.5 1.5"/></svg>
+                        </div>
                         <h3>Party & Rentals</h3>
                         <p>Tables, chairs, balloons, decorations, and last-minute supplies for birthdays, cookouts, and local celebrations.</p>
                     </article>
                     <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">+</span>
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                        </div>
                         <h3>Quick-Stop Services</h3>
                         <p>ATM access, EBT/SNAP-friendly shopping, and practical counter service for short trips between errands.</p>
                     </article>
                     <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">#</span>
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
                         <h3>Rotating Finds</h3>
                         <p>Imported snacks, seasonal goods, craft items, tobacco accessories, novelty pieces, and useful odds and ends.</p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Aisle Highlights</p>
+                    <h2>Fresh arrivals & neighborhood favorites</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-tag">New</div>
+                        <img src="assets/images/storefront.png" alt="Storefront highlights">
+                        <div class="gallery-info">
+                            <h3>Storefront Selection</h3>
+                            <p>Everything you see in the window and more.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-tag">Stocked</div>
+                        <img src="assets/images/frontdoor.png" alt="Front door items">
+                        <div class="gallery-info">
+                            <h3>Everyday Gear</h3>
+                            <p>The essentials you need, right when you need them.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-tag">Popular</div>
+                        <img src="assets/images/sign.png" alt="Signage">
+                        <div class="gallery-info">
+                            <h3>Party Rentals</h3>
+                            <p>Chairs, tables, and balloons for every local event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials-section">
+            <div class="container testimonial-card">
+                <p class="quote">"The only place on the block where I can get EBT snacks and rent chairs for the weekend in one stop. Real people, real convenience."</p>
+                <cite>— Jose, El Sereno Local</cite>
             </div>
         </section>
 
@@ -146,6 +206,33 @@
             </div>
         </section>
 
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Common Questions</p>
+                    <h2>Everything neighbors want to know</h2>
+                </div>
+                <div class="faq-grid">
+                    <details>
+                        <summary>Do you accept EBT?</summary>
+                        <p>Yes! We accept EBT (SNAP) for all eligible grocery and snack items. We are proud to be EBT-friendly for the El Sereno community.</p>
+                    </details>
+                    <details>
+                        <summary>Do you deliver rental tables and chairs?</summary>
+                        <p>Currently, we offer local pickup for all party rentals. We recommend a truck or large SUV for table sets. Call us to confirm availability before you stop by!</p>
+                    </details>
+                    <details>
+                        <summary>Is there parking available?</summary>
+                        <p>There is limited street parking directly in front of the store on Eastern Ave and additional parking on the surrounding side streets.</p>
+                    </details>
+                    <details>
+                        <summary>Can I check if something is in stock?</summary>
+                        <p>Absolutely. Our inventory moves fast, so feel free to call us at (323) 223-8115 and we'll check the aisles for you immediately.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <section id="location" class="section location-section">
             <div class="container location-layout">
                 <div>
@@ -157,6 +244,9 @@
                         El Sereno
                     </address>
                     <p><strong>Hours:</strong> 9:30 AM-9:00 PM daily</p>
+                    <div class="location-context">
+                        <p>Located on <strong>North Eastern Avenue</strong>, just south of <strong>Huntington Drive</strong>. Look for the bright signs and packed windows right in the heart of El Sereno.</p>
+                    </div>
                     <div class="inline-actions">
                         <a href="tel:+13232238115" class="btn btn-primary">Call Store</a>
                         <a href="https://www.google.com/maps/search/?api=1&query=Super+Discount+3118+N+Eastern+Ave+Los+Angeles+CA+90032" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open Map</a>
@@ -169,6 +259,34 @@
                         referrerpolicy="no-referrer-when-downgrade"
                         src="https://www.google.com/maps?q=3118%20N%20Eastern%20Ave%2C%20Los%20Angeles%2C%20CA%2090032&output=embed">
                     </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="rentals" class="section rentals-section">
+            <div class="container">
+                <div class="rentals-panel">
+                    <div class="rentals-info">
+                        <p class="eyebrow">Party Planning</p>
+                        <h2>Rentals Inquiry</h2>
+                        <p>Planning an event in El Sereno? Check availability for tables, chairs, and balloons here.</p>
+                    </div>
+                    <form class="rentals-form" id="rental-inquiry">
+                        <div class="form-group">
+                            <label for="rental-name">Name</label>
+                            <input type="text" id="rental-name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rental-item">What do you need?</label>
+                            <select id="rental-item" name="item">
+                                <option value="chairs">Chairs</option>
+                                <option value="tables">Tables</option>
+                                <option value="balloons">Balloons</option>
+                                <option value="everything">Everything</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Check Availability</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -187,9 +305,20 @@
 
     <footer class="site-footer">
         <div class="container footer-layout">
-            <p><strong>Super Discount</strong><br>3118 N Eastern Ave, Los Angeles, CA 90032</p>
-            <p><a href="tel:+13232238115">(323) 223-8115</a></p>
-            <p>&copy; 2026 Super Discount El Sereno.</p>
+            <div class="footer-brand">
+                <p><strong>Super Discount</strong><br>3118 N Eastern Ave, Los Angeles, CA 90032</p>
+                <p><a href="tel:+13232238115">(323) 223-8115</a></p>
+            </div>
+            <div class="footer-sms">
+                <p><strong>Get Deals via Text</strong></p>
+                <form id="sms-signup" class="sms-form">
+                    <input type="tel" placeholder="(323) 000-0000" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2026 Super Discount El Sereno.</p>
+            </div>
         </div>
     </footer>
 
