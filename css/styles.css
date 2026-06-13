@@ -692,3 +692,58 @@ address {
     }
 
 }
+
+/* --- v2 photography enrichments (v1 layout + v2 pics) --------------------- */
+.photo-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+}
+
+.photo-band figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.photo-band img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.photo-band figure:hover img {
+    transform: scale(1.05);
+}
+
+.about-media-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 2.6rem;
+}
+
+.about-media img {
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+    display: block;
+}
+
+@media (max-width: 760px) {
+    .photo-band {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-media-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-media {
+        order: -1;
+    }
+}
