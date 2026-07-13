@@ -1,0 +1,13 @@
+{
+  "$schema": "tokens/layout",
+  "space": { "1": "4px", "2": "8px", "3": "12px", "4": "16px", "5": "24px", "6": "32px", "7": "48px", "8": "64px" },
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px", "pill": "999px" },
+  "shadow": {
+    "card": "0 2px 10px rgba(0,0,0,0.45)",
+    "drawer": "-8px 0 30px rgba(0,0,0,0.6)"
+  },
+  "container": { "max": "1100px", "gutter": "16px", "min_supported": "360px" },
+  "grid": { "products_mobile": 2, "products_desktop": 4 },
+  "gold_rule": { "height": "3px", "gradient": "linear-gradient(90deg, transparent, #B39E3D 20%, #B39E3D 80%, transparent)" },
+  "z": { "header": 50, "drawer": 100, "toast": 200 }
+}
