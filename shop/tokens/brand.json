@@ -1,0 +1,31 @@
+{
+  "$schema": "tokens/brand",
+  "name": "Super Discount",
+  "display_name": "Super Discount El Sereno",
+  "established": 1998,
+  "nap": {
+    "street": "3118 N Eastern Ave",
+    "locality": "Los Angeles",
+    "region": "CA",
+    "postal": "90032",
+    "country": "US",
+    "phone_e164": "+13232238115",
+    "phone_display": "(323) 223-8115"
+  },
+  "hours": { "open": "09:30", "close": "21:00", "days": "Mo-Su", "display_en": "9:30 AM \u2013 9:00 PM daily" },
+  "geo_area": "El Sereno, Los Angeles",
+  "social": { "instagram": "https://www.instagram.com/superdiscount.99/" },
+  "sites": {
+    "marketing": "https://epicsereno.github.io/superdiscount/",
+    "shop": "https://epicsereno.github.io/superdiscount/shop/"
+  },
+  "checkout": {
+    "sms": true,
+    "snipcart": {
+      "enabled": true,
+      "api_key": "PASTE_SNIPCART_PUBLIC_API_KEY",
+      "validation_url": "https://epicsereno.github.io/superdiscount/shop/snipcart-products.html"
+    }
+  },
+  "price_range": "$"
+}
