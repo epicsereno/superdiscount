@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Super Discount El Sereno</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B0B0D">
+
+  <!-- NOTE: GitHub Pages serves 404.html at ANY path depth, so every URL
+       below must be absolute from the project root (/superdiscount/). -->
+  <link rel="icon" href="/superdiscount/favicon.ico" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/superdiscount/css/styles.css">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sd-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="/superdiscount/" aria-label="Super Discount El Sereno — home">
+        <span class="logo-super">Super</span>
+        <strong class="logo-discount">Discount</strong>
+      </a>
+    </nav>
+  </header>
+
+  <main class="error-page">
+    <p class="error-code" aria-hidden="true">404</p>
+    <h1>That aisle doesn&rsquo;t exist</h1>
+    <p>The page you&rsquo;re looking for isn&rsquo;t on the shelf. Head back to the storefront.</p>
+    <p><a class="btn btn-primary" href="/superdiscount/">Back to Home</a></p>
+
+    <ul class="sign-wall" aria-label="Store highlights">
+      <li>Spray Paint</li>
+      <li>Party Supplies</li>
+      <li>Exotic Sodas</li>
+      <li>ATM &middot; EBT</li>
+    </ul>
+  </main>
+</body>
+</html>
