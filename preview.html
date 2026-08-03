@@ -10,6 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Theme boot: runs before paint to prevent flash. Dark is the brand default. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('sd-theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -34,23 +48,29 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
+    <header class="site-header" data-header>
         <nav class="nav" aria-label="Main navigation">
             <a class="logo" href="#home" aria-label="Super Discount home">
                 <span>Super</span>
                 <strong>Discount</strong>
             </a>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-toggle>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span class="sr-only">Menu</span>
             </button>
-            <ul class="nav-links" id="nav-links">
+            <ul class="nav-links" id="nav-links" data-nav>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#location">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="nav-theme">
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">
+                        <span class="theme-icon" aria-hidden="true"></span>
+                        <span class="theme-label" data-theme-label>Light mode</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -203,7 +223,7 @@
             <p><strong>Super Discount</strong><br>3118 N Eastern Ave, Los Angeles, CA 90032</p>
             <p><a href="tel:+13232238115">(323) 223-8115</a></p>
             <p><a href="https://www.instagram.com/superdiscount.99/" target="_blank" rel="noopener">Instagram: @superdiscount.99</a></p>
-            <p>&copy; 2026 Super Discount El Sereno.</p>
+            <p>&copy; <span data-year>2026</span> Super Discount El Sereno.</p>
         </div>
     </footer>
 
