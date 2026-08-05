@@ -748,3 +748,96 @@ address { font-style: normal; font-size: 1.1rem; line-height: 1.7; }
   text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 .error-page .sign-wall { margin-top: var(--space-3); }
+
+/* ---------- 14. preview.html only ----------
+   preview.html is the legacy layout page. It shares this stylesheet but uses
+   its own service/photo markup, so these classes appear nowhere in index.html. */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+@media (min-width: 600px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.service-card {
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+.service-card p { color: var(--text-muted); margin-bottom: 0; }
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--accent-text);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* .hero-media is an empty decorative div in preview.html's legacy markup.
+   .hero already paints the brand gradient wash, so it needs no rules of its
+   own — styling it would just double the wash. */
+
+.hero-sign {
+  width: min(100%, 340px);
+  height: auto;
+  margin: 0 auto var(--space-3);
+}
+
+.hero-store-actions {
+  display: grid;
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  margin-block: var(--space-3);
+}
+@media (min-width: 600px) {
+  .hero-secondary-photos { grid-template-columns: repeat(2, 1fr); }
+}
+
+.photo-grid figure {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.photo-grid figcaption {
+  padding: 0.6rem var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* The storefront shot is the hero photo — give it room and its own ratio */
+.storefront-feature { max-width: 560px; justify-self: center; width: 100%; }
+.storefront-feature img { aspect-ratio: 3 / 4; }

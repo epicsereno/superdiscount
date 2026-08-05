@@ -21,7 +21,6 @@ No build tooling. Serve the directory root with any static file server:
 python3 -m http.server 8000
 # http://localhost:8000/index.html
 # http://localhost:8000/preview.html
-# http://localhost:8000/shop/index.html   -- needs the server; fetch() can't read JSON over file://
 ```
 
 There is no test suite, linter, or build/typecheck command in this repo — verify changes by loading the page in a browser. Note that absolute-path links in `404.html` (e.g. `/superdiscount/favicon.ico`) only resolve correctly when served from that path prefix (as GitHub Pages does), not from `localhost:8000/`.
@@ -43,40 +42,22 @@ GitHub Pages deploys automatically from `main`. Pushing to `main` is a live prod
 - `[data-map]` / `[data-map-load]` — lazy-loads the Google Maps iframe on click (map facade pattern, avoids loading the embed up front)
 - `[data-year]` — footer copyright year
 
-**Gotcha:** `preview.html`'s header/nav markup only carries the matching *classes* (`.site-header`, `.menu-toggle`, `.nav-links`), not the `data-*` attributes. Since `main.js` queries by attribute, the mobile menu toggle, scroll-shadow header, and theme toggle are all silent no-ops on `preview.html` (guarded by null checks — no errors, they just don't do anything). If asked to fix "the menu button doesn't work on preview," this is why — either add the `data-*` attributes to `preview.html`'s markup or accept that it's a static legacy page.
+`preview.html` carries the same `data-*` hooks, so the menu, header shadow, theme toggle, and footer year all work there too. It has no `[data-map]` facade — its map iframe is inline and always loaded. Because `main.js` queries by attribute and null-checks every hook, adding a page without a given `data-*` attribute silently skips that feature rather than erroring.
 
 ## Image assets
 
-- `assets/images/` — used by `preview.html` for inline content images (`storefront.png`, `sign.png`, `frontdoor.png`, plus `.webp` variants) and by `index.html` purely for OG/Twitter meta tags and JSON-LD (`og:image`, `logo`). **Two of those referenced files don't exist in the repo**: `assets/images/og-cover.jpg` and `assets/images/logo.png` — social-card previews and the `apple-touch-icon` (`assets/icons/apple-touch-icon.png`, also missing) are currently broken. Fix by adding the files or repointing the `<meta>`/`<link>` tags.
+- `assets/images/` — used by `preview.html` for inline content images (`storefront.png`, `sign.png`, `frontdoor.png`) and by `index.html`/`preview.html` for OG/Twitter meta tags and JSON-LD (`og-cover.png`, `logo.png`). Serve the content images through the `.webp` variants via `<picture>`; the PNGs are 8–14× larger and exist only as the fallback `src`. If you swap an OG image, update the `og:image:width`/`height` tags to the new file's real pixel dimensions — `og-cover.png` is 1168×784, not the 1200×630 those tags once claimed.
+- Icons are at the repo root (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`), not under `assets/`. `favicon.ico` is a 32×32 PNG-in-ICO generated to match `favicon.svg`.
 - `public/images/` — a `products/` catalog of ~80 numbered product images (`12-skittles-2-17oz.png`/`.svg`) plus empty placeholder subdirs (`banners/`, `categories/`, `logos/`, each holding only `.gitkeep`). **Not currently referenced by any HTML page** — treat it as a staged/orphaned asset set, not live inventory, unless you're wiring it into a page yourself.
 - `/scripts/` (a local image-generation helper) is gitignored and not part of the repo.
 
-## `shop/` — separate online-store PWA, checked in but treated as a foreign module
+## The online store lives in a different repo
 
-`shop/` is a self-contained, no-build static storefront (product grid, cart, i18n, PWA) with its own README stating it should **not** be merged into this marketing repo ("commerce stays separated") — but it currently *is* checked in here, under this repo's GitHub Pages, at `/superdiscount/shop/`. Be aware of the inconsistency before "fixing" it either way:
-- `index.html`'s nav/CTA "Shop Online" links point to an **external** URL, `https://epicsereno.github.io/superdiscount-shop/` (a different, separate GitHub Pages repo) — not to this repo's own `/shop/` path.
-- `shop/tokens/brand.json`'s `sites.shop` field, by contrast, says `https://epicsereno.github.io/superdiscount/shop/` (this repo's path).
-- Don't assume which one is "correct" — ask before reconciling them, since it determines whether `shop/` here is live inventory or a stale copy.
+This repo is marketing-only. The storefront is **not** here: the "Shop Online" links in `index.html` (nav CTA, shop band, footer) point to `https://epicsereno.github.io/superdiscount-shop/`, a separate GitHub Pages repo.
 
-Structure (from `shop/README.md`):
-```
-shop/index.html            store app — reads all JSON at runtime, renders client-side
-shop/manifest.webmanifest  PWA metadata (Android "Add to Home Screen")
-shop/sw.js                 service worker — network-first for *.json (fresh prices), cache-first otherwise
-shop/tokens/                colors.json (from the logo) · typography.json · layout.json · brand.json (NAP + checkout config)
-shop/data/products.json    the catalog — categories + products; edit prices/stock/tags here
-shop/i18n/{en,es,vi}.json  all UI strings, full parity across languages
-shop/tools/assets.sh       ImageMagick asset pipeline (favicons/OG/product images) — needs a `source/` folder not in this repo; hand to design
-shop/tools/gen_snipcart.py rebuilds shop/snipcart-products.html from products.json
-shop/img/products/         populated by assets.sh; missing images fall back to an auto letter tile in the UI
-```
+A copy of that storefront PWA used to be checked in at `shop/`, served at `/superdiscount/shop/`. It was removed because it duplicated the external store and pulled in the opposite direction: every customer-facing button went to the external URL while `sitemap.xml` told Google to index the local copy, and `shop/`'s own files disagreed with each other about which host was canonical. Its own README also said commerce should stay separated from this repo.
 
-Rules baked into `shop/`:
-- Colors come from `tokens/colors.json` only (sampled from the real logo) — don't hardcode hex values in `shop/index.html`.
-- Cart checkout is SMS/call-based (zero fees) via `sms:` links; Snipcart is wired but disabled by default (`tokens/brand.json` → `checkout.snipcart.enabled`, needs a real `api_key` to activate).
-- **After any edit to `shop/data/products.json`, rerun `python3 shop/tools/gen_snipcart.py`** — Snipcart's crawler validates prices against the static `snipcart-products.html` it generates, since it can't see the JS-rendered store.
-- "Smoke shop" (21+) items are display-only and excluded from cart/Snipcart by convention (`age21`/`inStoreOnly` flags in `products.json`).
-- 360px min width, WCAG AA, keyboard + `:focus-visible`, `prefers-reduced-motion` respected.
+If you need that code, it's in git history (`git log -- shop/`) — but prefer the external repo, which is what customers actually reach. Don't re-add a storefront here without deciding first which URL is canonical.
 
 ## Other content
 
@@ -91,4 +72,4 @@ Rules baked into `shop/`:
 - Established 1998
 - Instagram: `@superdiscount.99`
 
-These facts appear in multiple independent places that must be updated together if store info changes: `index.html`'s visible copy + Schema.org `Store` JSON-LD + Open Graph metadata, `preview.html`'s JSON-LD, and `shop/tokens/brand.json` (the single source of truth for NAP within `shop/`, consumed by `shop/index.html` at runtime and duplicated into `shop/index.html`'s own inline JSON-LD).
+These facts appear in multiple independent places that must be updated together if store info changes: `index.html`'s visible copy + Schema.org `Store` JSON-LD + Open Graph metadata, and `preview.html`'s JSON-LD. The separate storefront repo carries its own copy of the NAP data, so update it there too.
