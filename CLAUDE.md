@@ -53,7 +53,9 @@ GitHub Pages deploys automatically from `main`. Pushing to `main` is a live prod
 
 ## The online store lives in a different repo
 
-This repo is marketing-only. The storefront is **not** here: the "Shop Online" links in `index.html` (nav CTA, shop band, footer) point to `https://epicsereno.github.io/superdiscount-shop/`, a separate GitHub Pages repo.
+This repo is marketing-only, and **right now there is no online store to link to**.
+
+`index.html` used to carry three "Shop Online" links (nav CTA, shop band, footer) pointing at `https://epicsereno.github.io/superdiscount-shop/`. That repo is **private and archived**, so it does not serve public GitHub Pages — all three were dead links on the live site and have been removed, along with the shop band section. Don't re-add a "Shop Online" CTA until there's a storefront URL that actually loads for a logged-out visitor; check it in a private window first.
 
 A copy of that storefront PWA used to be checked in at `shop/`, served at `/superdiscount/shop/`. It was removed because it duplicated the external store and pulled in the opposite direction: every customer-facing button went to the external URL while `sitemap.xml` told Google to index the local copy, and `shop/`'s own files disagreed with each other about which host was canonical. Its own README also said commerce should stay separated from this repo.
 
