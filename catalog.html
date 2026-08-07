@@ -128,6 +128,12 @@ img{max-width:100%;display:block}
 .status-txt{font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-size:15px}
 .status-sub{color:var(--muted);font-size:14px}
 
+/* ---- banners ---- */
+.banner{display:block;width:100%;border-bottom:1px solid var(--line);background:var(--ink-3)}
+.banner img{width:100%;height:auto;display:block;aspect-ratio:1568/400;object-fit:cover}
+.svc-banner{margin:0 0 22px;border:1px solid var(--line);border-radius:3px;overflow:hidden;max-width:420px}
+.svc-banner img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+
 /* ---- nav chips ---- */
 .jump{border-bottom:1px solid var(--line);background:var(--ink-2)}
 .jump .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:12px;scrollbar-width:none}
@@ -171,11 +177,14 @@ img{max-width:100%;display:block}
   background:var(--ink-2);border:1px solid var(--line);border-radius:3px;
   overflow:hidden;display:flex;flex-direction:column;
 }
-.swatch{height:76px;position:relative;flex:none}
-.swatch::after{
+.media{position:relative;flex:none;aspect-ratio:4/3;background:var(--ink-3);overflow:hidden}
+.media img{width:100%;height:100%;object-fit:cover;display:block}
+.media.swatch::after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(0,0,0,.42));
 }
+.tile:hover .media img{transform:scale(1.03)}
+.media img{transition:transform .35s ease}
 .tile-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .tile h3{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:20px;letter-spacing:.02em;margin:0;line-height:1.15}
 .tile p{margin:0;font-size:14.5px;color:#BFBFBF}
@@ -261,6 +270,16 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
+  <div class="banner">
+    <picture>
+      <source type="image/webp" srcset="assets/catalog/hero-640.webp 640w, assets/catalog/hero-1120.webp 1120w, assets/catalog/hero-1568.webp 1568w" sizes="100vw">
+      <img src="assets/catalog/hero-1120.jpg"
+           srcset="assets/catalog/hero-640.jpg 640w, assets/catalog/hero-1120.jpg 1120w, assets/catalog/hero-1568.jpg 1568w"
+           sizes="100vw" width="1568" height="400" fetchpriority="high" decoding="async"
+           alt="Latas de pintura en aerosol Super Discount El Sereno">
+    </picture>
+  </div>
+
   <nav class="jump" aria-label="Categorías">
     <div class="wrap" id="chips"></div>
   </nav>
@@ -277,6 +296,13 @@ html{scroll-behavior:smooth}
   <section class="svc">
     <div class="wrap">
       <h2 data-ui="servicesTitle"></h2>
+      <div class="svc-banner">
+        <picture>
+          <source type="image/webp" srcset="assets/catalog/services-banner-480.webp">
+          <img src="assets/catalog/services-banner-480.jpg" width="480" height="360"
+               loading="lazy" decoding="async" alt="Copias, fax y llaves">
+        </picture>
+      </div>
       <ul id="svcList"></ul>
     </div>
   </section>
@@ -374,8 +400,24 @@ html{scroll-behavior:smooth}
       var badge = c.restricted ? '<span class="badge">'+esc(t('ageGate'))+'</span>' : '';
 
       var tiles = c.products.map(function(p){
+        var media;
+        if(p.img && p.widths && p.widths.length){
+          var base=DATA.meta.images.path+p.img;
+          var webp=p.widths.map(function(w){return base+'-'+w+'.webp '+w+'w';}).join(', ');
+          var jpg =p.widths.map(function(w){return base+'-'+w+'.jpg '+w+'w';}).join(', ');
+          var big =p.widths[p.widths.length-1];
+          media='<div class="media"><picture>'
+            + '<source type="image/webp" srcset="'+webp+'" sizes="(min-width:900px) 340px, (min-width:600px) 46vw, 92vw">'
+            + '<img src="'+base+'-'+big+'.jpg" srcset="'+jpg+'" '
+            + 'sizes="(min-width:900px) 340px, (min-width:600px) 46vw, 92vw" '
+            + 'loading="lazy" decoding="async" width="'+big+'" height="'+Math.round(big*0.75)+'" '
+            + 'alt="'+esc(p.name[lang])+'">'
+            + '</picture></div>';
+        } else {
+          media='<div class="media swatch" style="background:'+esc(p.color)+'"></div>';
+        }
         return '<article class="tile">'
-          + '<div class="swatch" style="background:'+esc(p.color)+'"></div>'
+          + media
           + '<div class="tile-body">'
           + '<h3>'+esc(p.name[lang])+'</h3>'
           + '<p>'+esc(p.desc[lang])+'</p>'
