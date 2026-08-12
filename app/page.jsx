@@ -59,6 +59,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ROGUE LUCY MORNINGSTAR FEATURE — chaotic commit energy */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%)', color: '#e94560', borderTop: '4px solid #e94560', borderBottom: '4px solid #e94560' }}>
+        <div className="wrap" style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+          <p className="eyebrow" style={{ color: '#e94560', letterSpacing: '0.2em' }}>git init · git add . · git commit -m "chaos"</p>
+          <h2 className="display" style={{ color: '#fff', margin: '0.5rem 0' }}>Lucy Morningstar Rogue Deal</h2>
+          <p style={{ maxWidth: '40rem', margin: '0 auto 1.5rem', color: '#ccc' }}>
+            One feature. One commit. One hour of pure digital rot. No roadmap. No standups. Just the feature that wakes up screaming.
+          </p>
+          <Link href="/collections/hot-deals" className="btn btn-primary" style={{ background: '#e94560', borderColor: '#e94560' }}>
+            Claim the chaos →
+          </Link>
+        </div>
+      </section>
+
       <section className="section">
         <div className="wrap">
           <div className="section-head">
