@@ -1,17 +1,18 @@
-# Super Discount El Sereno
+# Super Discount El Sereno — Bare Bones Site
 
-Public static website for **Super Discount**, a neighborhood discount store in El Sereno, Los Angeles. Party supplies, household goods, snacks, table & chair rentals, spray paint, markers, novelties, ATM access, and EBT-friendly shopping.
+This is the **Super Discount Bare Bones Site** — a lightweight, zero-dependency, barebones static HTML/CSS/JS site for **Super Discount**, a neighborhood discount store in El Sereno, Los Angeles.
 
-🔗 **Live site:** https://epicsereno.github.io/superdiscount/
+Party supplies, household goods, snacks, table & chair rentals, spray paint, markers, novelties, ATM access, and EBT-friendly shopping.
 
-## Tech stack
+🔗 **Live Site:** https://epicsereno.github.io/superdiscount/
 
-- **HTML5** — semantic markup with skip links, ARIA, and Schema.org `Store` structured data (JSON-LD).
-- **CSS** — single hand-written stylesheet (`css/styles.css`) using custom properties, Grid/Flexbox, and `clamp()` fluid typography. No framework, no build step.
-- **JavaScript** — vanilla `js/main.js`: accessible mobile menu toggle, scroll-aware header, theme toggle, and map lazy-loading.
-- **Hosting** — GitHub Pages (Jekyll disabled via `.nojekyll`).
+## Highlights
 
-## Project structure
+- **Bare Bones & Zero Dependencies** — Hand-crafted vanilla HTML5, CSS3, and JavaScript. No build step, frameworks, or heavy bundlers required.
+- **Fast & Responsive** — Fluid typography with CSS `clamp()`, semantic markup, and instant loading.
+- **GitHub Pages Ready** — Direct static deployment with Jekyll disabled (`.nojekyll`).
+
+## Project Structure
 
 ```
 index.html        Main landing page
@@ -28,7 +29,7 @@ sitemap.xml       Sitemap for search engines
 .nojekyll         Disables Jekyll processing on GitHub Pages
 ```
 
-## Local development
+## Local Development
 
 No build tooling required — serve the directory with any static server:
 
@@ -39,7 +40,7 @@ python3 -m http.server 8000
 
 ## Deployment
 
-The site deploys automatically from the default branch via GitHub Pages. To update the live site, commit changes to `main` and push:
+The site deploys automatically from the `main` branch via GitHub Pages. To update the live site:
 
 ```bash
 git add .
@@ -47,9 +48,7 @@ git commit -m "Update site"
 git push origin main
 ```
 
-GitHub Pages rebuilds within a minute or two.
-
-## Store info
+## Store Information
 
 - **Address:** 3118 N Eastern Ave, Los Angeles, CA 90032 (El Sereno)
 - **Phone:** (323) 223-8115
@@ -59,3 +58,4 @@ GitHub Pages rebuilds within a minute or two.
 ## License
 
 Released under the [MIT License](LICENSE).
+
