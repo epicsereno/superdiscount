@@ -1,63 +1,55 @@
-# Super Discount El Sereno — Known Vendors & Suppliers
+# Known Vendors & Brands — Super Discount El Sereno Catalog
 
-**Lucy Morningstar rogue note:** Catalog of the color wall, the cooler of chaos, and the everyday bargains that keep the block spinning. No prices. No cart. Just the brands that stock the shelves since 1998.
+*Compiled under the Dark Side for absolute order and ruthless efficiency.*
 
-## Core Brands Already Live in `data/catalog.json`
+**Store:** Super Discount El Sereno  
+**Address:** 3118 N Eastern Ave, Los Angeles, CA 90032  
+**Focus:** Spray paint, markers, exotic sodas, party/rentals, toys, blank apparel, household, smoke (21+)
+
+## Core Known Brands from Catalog (v2.0.0)
 
 ### Spray Paint & Caps
-- **Ironlak** (Lak 400ml gloss acrylic) — high coverage, UV resistant, full color wall. Official California presence historically via local shops and former Ironlak LA flagship energy.
-- Caps / tips (fat, skinny, detail) — ask at the counter.
+- **Ironlak** (Lak 400ml) — Acrylic gloss, high coverage, UV resistant. Full color range. Australian brand with strong LA graffiti history (former Ironlak LA flagship).
+- Caps / tips (fat, skinny, detail) — loose or packs. Compatible with Ironlak and similar systems.
 
 ### Markers & Ink
-- **Molotow One4All 227HS** (4mm round, acrylic, refillable) — full color range. North American wholesale via Molotow-NA / Art Primo (Seattle hub serving CA).
-- **Pilot Super Color** — permanent markers + refill ink.
+- **Molotow One4All 227HS** — 4mm round nib, acrylic, refillable. Full color range. German precision.
+- **Pilot Super Color** — Permanent markers + refill ink.
 
-### Exotic Sodas & Drinks
-- **Faygo** (Detroit classic — Redpop, Moon Mist, Cotton Candy, etc. 20/23oz). Distributed via National Beverage Corp channels; available through specialty soda wholesalers that reach Southern California.
-- **Original New York Seltzer** — glass bottle 80s flavors.
-- Flavor shots + everyday (Coke, Pepsi, Fanta, Crush, Capri Sun, water).
+### Exotic & Everyday Sodas
+- **Faygo** (Detroit) — Redpop, Moon Mist, Cotton Candy, etc. 20oz / 23oz. National Beverage Corp.
+- **Original New York Seltzer** — Glass bottle, classic 80s flavors.
+- Flavor shots — customizable.
+- Everyday: Coca-Cola, Pepsi, Fanta, Crush, Capri Sun, Minute Maid, water. Jarritos often stocked in El Sereno area.
 
 ### Toys & Collectibles
-- **Hot Wheels** (Mattel) — full rack, rotating stock.
-- Team lanyards (Raiders, Rams, Chargers, Dodgers…).
+- **Hot Wheels** (Mattel) — Full rack, frequent new stock.
+- Team lanyards (Raiders, Rams, Chargers, Dodgers, etc.).
 
-### Blank Apparel
-- Plain tees (white/black/grey/blue/red/brown, S–5XL) ready for paint or print. Common wholesale sources: Gildan, Hanes, Bella+Canvas via LA apparel distributors.
+### Apparel
+- Blank tees — White, black, grey, blue, red, brown. Sizes S–5XL. Ready for paint/print (common blanks: Gildan-style).
 
-### Smoke Shop (21+)
-- **RAW** and **Elements** rolling papers.
+### Smoke Shop (21+ ID required)
+- **RAW** rolling papers
+- **Elements** rolling papers
 
-### Party & Rentals / Household
-- Generic party supplies, balloons, disposables, table/chair rentals (call to reserve).
-- Household: cleaning, batteries, paper goods — standard cash-and-carry suppliers.
+### Party & Services
+- Party supplies (balloons, piñatas, disposables)
+- Table/chair/canopy rentals (local reservation)
+- Counter services: key cutting, copies/printing, fax, ATM, EBT
 
-## Expansion Candidates for Better Catalog
+## Potential Expansions (Better Catalog)
+- Paint: Montana Black / Gold 400ml, Belton, MTN (Montana Colors), local LA distributors.
+- Markers: Additional Molotow variants, Krink K-60, Uni Posca, refill systems.
+- Sodas: More Mexican classics (Jarritos full range, Mexican Coke), Arizona big cans, additional Faygo flavors.
+- Apparel blanks: Explicit Gildan / Hanes / Bella+Canvas sourcing notes.
+- Party: Specific disposable brands or local rental partners.
 
-| Category | Brand / Supplier | Why it fits El Sereno | Notes |
-|----------|------------------|-----------------------|-------|
-| Spray | Montana Black / Gold | Already imaged in public/ | High pressure, street classic |
-| Spray | Belton / Molotow cans | Same family as markers | Wholesale via Molotow-NA |
-| Markers | Krink K-60, Posca | Street + fine art crossover | Common in LA graffiti shops |
-| Sodas | Jarritos | Mexican classic, perfect for Eastern Ave | Local Mexican distributors |
-| Sodas | Arizona, more Faygo flavors | Already in everyday cooler energy | Easy add |
-| Apparel | Gildan / Hanes blanks | Standard for blank tees | LA garment district |
-| Party | Local rental co. or more disposable brands | Tables/chairs already offered | Call-to-reserve model stays |
+## Notes for Catalog Maintenance
+- No prices/SKUs online (showcase only). Stock moves fast — "ask at the counter".
+- Multi-locale: es / en / vi.
+- Images live under `assets/catalog/` (webp + jpg fallbacks).
+- Update `data/catalog.json` when adding products; keep `catalog.html` in sync.
+- HOURLY_PULSE tracks timed operations.
 
-## Distribution Notes (research snapshot 2026-08)
-- Ironlak: moves primarily through independent graffiti/skate/art shops. Support local. Former LA flagship closed; product still reaches CA via wholesale.
-- Molotow: Official NA distributor Molotow North America / Art Primo (wholesale contact available). Serves 200+ stores.
-- Faygo: National Beverage; specialty soda wholesalers and some regional beverage distributors push into CA markets.
-- General LA cash-and-carry / restaurant supply houses for party + household.
-
-## Next Pulse Actions
-- Add 1–2 products (Montana Black, Jarritos) to `catalog.json` with images when assets ready.
-- Keep `catalog.html` in sync with JSON.
-- Update this file whenever a new brand hits the shelves.
-
-```
-git add docs/vendors.md
-git commit -m "docs: known vendors + expansion candidates for better catalog"
-git push
-```
-
-★ Keep the rot spinning. Lucy out.
+*Order from chaos. The Empire expands the catalog.*
