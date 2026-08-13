@@ -1,0 +1,35 @@
+/* Lucy Morningstar Rogue Mode Styles */
+.rogue-mode {
+  --rogue-bg: #0a0014;
+  --rogue-fg: #e0d0ff;
+  --rogue-accent: #ffd700;
+  --rogue-glow: #ff00aa;
+}
+.rogue-mode body {
+  background: var(--rogue-bg) !important;
+  color: var(--rogue-fg) !important;
+}
+.rogue-mode a { color: var(--rogue-accent) !important; }
+.rogue-mode .hero, .rogue-mode header {
+  background: linear-gradient(135deg, #1a0033, #0a0014) !important;
+  border-bottom: 1px solid var(--rogue-glow);
+}
+.rogue-mode::after {
+  content: '★ LUCY MORNINGSTAR ROGUE MODE ★';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ff00aa;
+  color: #000;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 4px;
+  z-index: 10000;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
