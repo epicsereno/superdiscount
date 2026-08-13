@@ -38,12 +38,10 @@
 - Table/chair/canopy rentals (local reservation)
 - Counter services: key cutting, copies/printing, fax, ATM, EBT
 
-## Potential Expansions (Better Catalog)
-- Paint: Montana Black / Gold 400ml, Belton, MTN (Montana Colors), local LA distributors.
-- Markers: Additional Molotow variants, Krink K-60, Uni Posca, refill systems.
-- Sodas: More Mexican classics (Jarritos full range, Mexican Coke), Arizona big cans, additional Faygo flavors.
-- Apparel blanks: Explicit Gildan / Hanes / Bella+Canvas sourcing notes.
-- Party: Specific disposable brands or local rental partners.
+## Expansions & Generated Vendor Assets (v2.1.0)
+- **Montana Cans** (Gold/Black 400ml) — High-pressure and low-pressure premium spray acrylics. Asset created: `assets/catalog/montana-gold-480.jpg` (`.webp`).
+- **Krink NYC** (K-60 Squeeze Markers) — 60ml high-grade opaque paint marker. Asset created: `assets/catalog/krink-k60-480.jpg` (`.webp`).
+- **Mexican Sodas & Imports** (Jarritos, Mexican Coke) — Glass bottle real sugar imports. Asset created: `assets/catalog/jarritos-coke-480.jpg` (`.webp`).
 
 ## Notes for Catalog Maintenance
 - No prices/SKUs online (showcase only). Stock moves fast — "ask at the counter".

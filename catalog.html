@@ -68,23 +68,7 @@ img{max-width:100%;display:block}
   white-space:nowrap;
 }
 .home:hover{color:var(--paper)}
-.langs{margin-left:auto;display:flex;gap:4px}
-.lang{
-  font-family:var(--display);
-  text-transform:uppercase;
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:.1em;
-  background:none;
-  border:1px solid var(--line);
-  color:var(--muted);
-  padding:6px 10px;
-  border-radius:2px;
-  cursor:pointer;
-  min-height:34px;
-}
-.lang[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
-.lang:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
 /* ---- hero ---- */
 .hero{padding:clamp(40px,9vw,88px) 0 clamp(28px,5vw,44px);border-bottom:1px solid var(--line)}
@@ -243,11 +227,6 @@ html{scroll-behavior:smooth}
 <header class="topbar">
   <div class="wrap">
     <a class="home" href="./index.html">← Super Discount</a>
-    <div class="langs" role="group" aria-label="Idioma / Language">
-      <button class="lang" data-lang="es" aria-pressed="true">ES</button>
-      <button class="lang" data-lang="en" aria-pressed="false">EN</button>
-      <button class="lang" data-lang="vi" aria-pressed="false">VI</button>
-    </div>
   </div>
 </header>
 
@@ -451,24 +430,10 @@ html{scroll-behavior:smooth}
     renderStatic(); renderStatus(); renderChips(); renderCats(); renderSvc();
   }
 
-  document.querySelectorAll('.lang').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      lang = btn.getAttribute('data-lang');
-      document.querySelectorAll('.lang').forEach(function(b){
-        b.setAttribute('aria-pressed', String(b===btn));
-      });
-      try{ localStorage.setItem('sd-lang',lang); }catch(e){}
-      renderAll();
-    });
-  });
-
   try{
     var saved=localStorage.getItem('sd-lang');
     if(saved==='en'||saved==='vi'||saved==='es'){
       lang=saved;
-      document.querySelectorAll('.lang').forEach(function(b){
-        b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===lang));
-      });
     }
   }catch(e){}
 

@@ -808,11 +808,12 @@ address { font-style: normal; font-size: 1.1rem; line-height: 1.7; }
 .photo-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-2);
+  gap: var(--space-3);
   margin-block: var(--space-3);
 }
 @media (min-width: 600px) {
   .hero-secondary-photos { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid--3col { grid-template-columns: repeat(3, 1fr); }
 }
 
 .photo-grid figure {
@@ -821,13 +822,33 @@ address { font-style: normal; font-size: 1.1rem; line-height: 1.7; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.photo-grid figure:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-grid picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .photo-grid img {
+  display: block;
   width: 100%;
   height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
+.photo-grid figure:hover img {
+  transform: scale(1.02);
+}
+
 .photo-grid figcaption {
   padding: 0.6rem var(--space-2);
   font-family: var(--font-display);
