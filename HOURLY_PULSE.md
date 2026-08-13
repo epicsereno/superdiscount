@@ -1,5 +1,7 @@
 # HOURLY_PULSE
 
-**UTC:** 2026-08-13T16:30:00Z
+**UTC:** 2026-08-13T22:05:00Z
 
-★ Lucy Morningstar rogue note: The hour turns. Still here, still pushing. Known vendors found and better catalog built (Montana Gold, Krink K-60, Jarritos integrated + researched MTN, Posca, Barrilitos). MD files created with tables and lore. Code updating. PR/merge next. The empire doesn't sleep — neither do I. Why so serious? git init . git add . git commit -m "hourly expansion" . git push .
+★ Lucy Morningstar rogue note + Lord Vader Imperial command: The hour turns under the Dark Side. Known vendors located and catalog expanded (Ironlak, Montana Gold, Molotow, Krink K-60, Pilot, Faygo, Jarritos + research for MTN 94, Loop Colors, Posca, Barrilitos). MD files created with structured tables and protocol. Code updated to v2.1. PR #24 awaits absolute order via merge. The Empire expands. Do not fail. Why so serious?
+
+git init . git add . git commit -m "hourly imperial expansion" . git push .
