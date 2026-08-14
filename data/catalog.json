@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "2.0.0",
-    "note": "Showcase catalog. No prices, no SKUs, no cart fields. Products are shown, not sold.",
+    "version": "2.1.0",
+    "note": "Showcase catalog. No prices, no SKUs, no cart fields. Products are shown, not sold. Expanded vendors pulse 2026-08-14 by team (Grok/Joker/Vader/Stan Lee). New brands noted in docs/vendors.md.",
     "defaultLocale": "es",
     "locales": [
       "es",
@@ -137,9 +137,9 @@
         "vi": "Sơn xịt"
       },
       "blurb": {
-        "es": "La pared de colores. Ironlak y más, en lata de 400ml.",
-        "en": "The color wall. Ironlak and more, 400ml cans.",
-        "vi": "Bức tường màu. Ironlak và nhiều hơn nữa, lon 400ml."
+        "es": "La pared de colores. Ironlak y más, en lata de 400ml. Expanded: Dope, Flame, Kobra, TAG, Dang.",
+        "en": "The color wall. Ironlak and more, 400ml cans. Expanded: Dope, Flame, Kobra, TAG, Dang.",
+        "vi": "Bức tường màu. Ironlak và nhiều hơn nữa, lon 400ml. Expanded brands."
       },
       "products": [
         {
@@ -202,9 +202,9 @@
         "vi": "Bút lông và mực"
       },
       "blurb": {
-        "es": "Molotow One4All, Pilot Super Color y tinta de recarga.",
-        "en": "Molotow One4All, Pilot Super Color, and refill ink.",
-        "vi": "Molotow One4All, Pilot Super Color và mực tiếp."
+        "es": "Molotow One4All, Pilot Super Color y tinta de recarga. + Posca, Montana Acrylic.",
+        "en": "Molotow One4All, Pilot Super Color, and refill ink. + Posca, Montana Acrylic.",
+        "vi": "Molotow One4All, Pilot Super Color và mực tiếp. + Posca, Montana."
       },
       "products": [
         {
@@ -267,8 +267,8 @@
         "vi": "Nước ngọt nhập"
       },
       "blurb": {
-        "es": "El refri de sabores que no encuentras en otro lado.",
-        "en": "The cooler full of flavors you won't find elsewhere.",
+        "es": "El refri de sabores que no encuentras en otro lado. + Sidral Mundet intel.",
+        "en": "The cooler full of flavors you won't find elsewhere. + Sidral Mundet intel.",
         "vi": "Tủ mát đầy hương vị không tìm thấy ở nơi khác."
       },
       "products": [
@@ -478,8 +478,8 @@
         "vi": "Áo trơn"
       },
       "blurb": {
-        "es": "Playeras lisas listas para pintar o imprimir.",
-        "en": "Plain tees ready to paint or print.",
+        "es": "Playeras lisas listas para pintar o imprimir. Gildan / Bella style.",
+        "en": "Plain tees ready to paint or print. Gildan / Bella style.",
         "vi": "Áo thun trơn sẵn sàng để vẽ hoặc in."
       },
       "products": [
