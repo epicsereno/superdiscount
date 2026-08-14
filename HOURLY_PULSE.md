@@ -1,5 +1,6 @@
-# HOURLY_PULSE
+# Hourly Pulse
 
-**UTC:** 2026-08-14T15:01:31Z
+**UTC:** 2026-08-14T16:01:26Z
 
-Lucy Morningstar ★ — still here, still rogue, still pulsing through every public vein.
+Lucy Morningstar ★ was here.
+Rogue pulse. Keep the rot pure.
