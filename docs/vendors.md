@@ -1,11 +1,11 @@
 # ⚡ Known Vendors & Brands — Super Discount El Sereno Catalog
 ## Lucy Morningstar Hourly Expansion v2.8.0 — Team (Grok + Joker + Lord Vader + Stan Lee With Jordan Belfort)
 
-*Heavy mechanical breathing* *HAHAHA! Face front!* Since 1998, Super Discount El Sereno at 3118 N Eastern Ave: color-slinging, soda-sipping, chaos HQ. v2.8.0 fortifies prior intel with deeper marker ranges, POD-ready apparel blanks, additional soda and local LA notes. Absolute efficiency.
+*Heavy mechanical breathing* *HAHAHA! Face front!* Since 1998, Super Discount El Sereno at 3118 N Eastern Ave: color-slinging, soda-sipping, chaos HQ. v2.8.0 deepens markers, spray pressure notes, blank apparel POD-ready, local LA distributor intel, exotic soda expands.
 
 **Store:** Super Discount El Sereno  
 **Address:** 3118 N Eastern Ave, Los Angeles, CA 90032  
-**Focus:** Spray paint, markers, exotic sodas, toys, blank apparel (POD capable), party/rentals, smoke (21+), counter services
+**Focus:** Spray paint, markers, exotic sodas, toys, blank apparel, party/rentals, smoke (21+), counter services
 **Version:** 2.8.0 (Lucy pulse + Joker chaos + Imperial order + Stan Lee lore)
 
 ### 🎨 Spray Paint & Caps
@@ -31,16 +31,17 @@
 - Molotow One4All 227HS (German acrylic refillable) — Asset ready
 - Krink K-60 (NYC opaque squeeze) — Asset ready
 - Pilot Super Color + Uni Paint PX / PX-30 chisel
-- Posca / Uni POSCA full range (PC-1M, PC-3M, PC-5M, PC-7M, PC-8K, PC-17K, Mop’R) — Must-have popular
-- Montana Acrylic markers (15mm / 30mm refillable, color-matched to Gold)
+- Posca / Uni POSCA (PC-5M, Mop’R, PC-8K, PC-17K) — Must-have popular, expanded tips
+- Montana Acrylic markers (15mm refillable, color-matched to Gold)
 - Sakura Solid Marker
-- Grog (Italian high quality squeezer)
+- Grog (Italian high quality)
 - Markal B Paintstik
 - Pilot Pintor (strong Posca alternative, valve-action acrylic)
 - Uni Paint markers deeper range
 - Sharpie / Magnum (classic industrial)
-- On The Run (OTR) 001/002 markers
-- Additional refill systems and tips for volume efficiency
+- On The Run (OTR) markers
+- Molotow Masterpiece 60mm / 760
+- Speedball / other calligraphy for hybrid work
 
 ### 🥤 Sodas
 - Faygo (Detroit) — Redpop, Moon Mist, Cotton Candy + more — Asset ready
@@ -53,15 +54,17 @@
 - Tepache / De La Calle / Tepachito (fermented pineapple, LA trend)
 - Besitos Lime con Chile (spicy SoCal twist)
 - Flavor shots + everyday (Coke, Pepsi, Fanta, Crush, Capri Sun)
-- Bonus: Boylan, Stewart’s, Jones Soda, Big Easy, additional regional imports
+- Bonus: Boylan, Stewart’s, Jones Soda, Big Easy, Jarritos deeper flavors
 
 ### Toys, Apparel, Smoke, Party, Services
-Hot Wheels (asset), team lanyards (Raiders, Rams, Chargers, Dodgers — asset), blank tees (S-5XL — Gildan Softstyle / Bella+Canvas 3001 / Comfort Colors / Next Level style blanks ready for paint or print — asset), RAW/Elements rolling papers (asset), party supplies + table/chair/canopy rentals, keys/copies/fax/ATM/EBT.
+Hot Wheels (asset), team lanyards (Raiders, Rams, Chargers, Dodgers — asset), blank tees (S-5XL — Gildan Softstyle / Bella+Canvas / Comfort Colors / Next Level style blanks ready for paint or print — asset), RAW/Elements rolling papers (asset), party supplies + table/chair/canopy rentals, keys/copies/fax/ATM/EBT.
 
-**Apparel blanks expanded + POD readiness:** Gildan, Bella+Canvas, Comfort Colors, Next Level — ready for custom paint or future POD runs via known fulfillment: Printful (premium quality + branding), Printify (wide catalog + margins), Gelato (global local production). Notes for AI mockup prompts in docs/.
+**Apparel blanks expanded:** Gildan, Bella+Canvas, Comfort Colors, Next Level — ready for custom paint or future POD runs via Printful / Printify / Gelato (quality vs margin tradeoff). Local wholesale blanks preferred for in-store.
 
-**Local LA efficiency notes:** Source via national importers (Montana Cans USA etc.) and local wholesale for rapid restock. Volume focus for neighborhood demand.
+**Local LA notes:** Eastside paint/marker distributors rotate; Ironlak & Montana remain core. Soda cooler stock moves with LA trends (tepache, real-sugar Mexican).
+
+**POD notes (future):** Blank tees + markers = custom paint merch path. Printify for lowest base on volume, Printful for consistent branding if expanding online later.
 
 **Maintenance:** Sync to data/catalog.json multi-locale (es/en/vi), bump version, update HOURLY_PULSE, assets webp+jpg. Showcase only — ask at the counter. No prices online.
 
-*Order from chaos. Lucy Morningstar pulse. Empire expands with ruthless efficiency. Excelsior! Why so serious? Do not fail me.*
+*Order from chaos. Lucy Morningstar pulse. Empire expands. Excelsior! Why so serious?*
