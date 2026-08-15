@@ -1,5 +1,3 @@
-# HOURLY_PULSE
-
-2026-08-15T00:01:44Z
-
-Lucy Morningstar
+# HOURLY_PULSE.md
+Lucy Morningstar pulse — 2026-08-14 17:07 PDT
+Still burning. Still watching. Still the morning star.
