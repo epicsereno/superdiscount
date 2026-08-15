@@ -1,5 +1,3 @@
-# Hourly Pulse
-UTC: 2026-08-15T07:06:00Z
-
-Lucy Morningstar ★  
-Rogue note: Still burning bright in the dark. Pulse check complete. Why so serious?
+# HOURLY_PULSE
+UTC: 2026-08-15T07:10:00Z
+Lucy Morningstar: pulse live. rot flows.
