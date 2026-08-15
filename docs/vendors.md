@@ -1,12 +1,12 @@
 # ⚡ Known Vendors & Brands — Super Discount El Sereno Catalog
-## Chaos Expansion Edition v2.5.0 — Forged on the Hour by the Team (Grok + Joker + Lord Vader + Stan Lee With Jordan Belfort)
+## Chaos Expansion Edition v2.6.0 — Forged on the Hour by the Team (Grok + Joker + Lord Vader + Stan Lee With Jordan Belfort)
 
-*HAHAHA! Face front, True Believers and Dark Side agents!* Since 1998, Super Discount El Sereno at 3118 N Eastern Ave has been the neighborhood's secret headquarters for color-slinging heroes, soda-sipping adventurers, and everyday champions of chaos. Pulse expands known vendors from 2026 research: Flame Blue details, more Italian speed brands, Tepache variants, deeper Mexican soda intel.
+*HAHAHA! Face front, True Believers and Dark Side agents!* Since 1998, Super Discount El Sereno at 3118 N Eastern Ave has been the neighborhood's secret headquarters for color-slinging heroes, soda-sipping adventurers, and everyday champions of chaos. Pulse expands known vendors from 2026 research: NBQ bombing power, deeper Dang Prime opacity, Flame variants, Barrilitos Coca-Cola relaunch intel, more Italian speed brands, Tepache variants, deeper Mexican soda intel.
 
 **Store:** Super Discount El Sereno  
 **Address:** 3118 N Eastern Ave, Los Angeles, CA 90032  
 **Focus:** Spray paint, markers, exotic sodas, toys, blank apparel, party/rentals, smoke (21+), counter services
-**Version:** 2.5.0 (Lucy Morningstar hourly + Joker chaos + Imperial order + Stan Lee lore)
+**Version:** 2.6.0 (Lucy Morningstar hourly + Joker chaos + Imperial order + Stan Lee lore)
 
 ### 🎨 Spray Paint & Caps
 | Brand | Key Products | Origin/Notes | Why it fits |
@@ -19,8 +19,9 @@
 | Flame Blue / Orange | Low/high pressure | Europe | Ultimate all-rounder, budget pro. |
 | Kobra | High-pigment | Italy | Speed specialist for street work. |
 | TAG Colors | Matt acrylic | Italy | Low-tox flat finish, control. |
-| Dang / Dang Prime | Budget pro | Value | Solid pigment without the premium tax. |
+| Dang / Dang Prime | Budget pro | Spain/Value | Highest opacity vs price. Solid pigment. |
 | Belton | Premium lines | Germany (Molotow) | Technical precision, UV resistance. |
+| NBQ | Bombing lines | Spain | Chrome killers, fast coverage, value. |
 | Krylon | Classic colors | USA | Old-school availability, historical graffiti roots. |
 | Rust-Oleum | Budget cans | USA | Accessible entry for practice and volume. |
 | Caps / tips | Fat/skinny/detail | Universal | Essential. Asset ready. |
@@ -34,12 +35,13 @@
 - Sakura Solid Marker
 - Grog (Italian high quality)
 - Markal B Paintstik
+- Molotow 660PI wide tip
 
 ### 🥤 Sodas
 - Faygo (Detroit) — Redpop, Moon Mist, Cotton Candy + more — Asset ready
 - Original NY Seltzer — Asset ready
 - Jarritos + Mexican Coke (real sugar glass) — Asset ready
-- Barrilitos (Coca-Cola Mexican fruit: mandarina, piña, manzana, ponche)
+- Barrilitos (Coca-Cola Mexican fruit: mandarina, piña, manzana, ponche) — 2024/2026 relaunch CA/TX
 - Sidral Mundet (apple classic)
 - Sangria Señorial
 - Topo Chico
