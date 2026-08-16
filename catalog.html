@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qué vendemos — Super Discount El Sereno</title>
-<meta name="description" content="Pintura en aerosol, marcadores, sodas exóticas, artículos de fiesta y servicios de mostrador. Super Discount El Sereno, desde 1998 en 3118 N Eastern Ave, Los Angeles.">
+<title>What We Carry — Super Discount El Sereno</title>
+<meta name="description" content="Spray paint, markers, exotic sodas, party rentals, and counter services. Super Discount El Sereno, since 1998 at 3118 N Eastern Ave, Los Angeles.">
 <link rel="canonical" href="https://epicsereno.github.io/superdiscount/catalog.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Qué vendemos — Super Discount El Sereno">
-<meta property="og:description" content="Pintura, marcadores, sodas exóticas y lo del diario. Desde 1998 en Eastern Ave.">
+<meta property="og:title" content="What We Carry — Super Discount El Sereno">
+<meta property="og:description" content="Paint, markers, exotic sodas, and everyday essentials. In El Sereno since 1998 on Eastern Ave.">
 <meta property="og:url" content="https://epicsereno.github.io/superdiscount/catalog.html">
 <meta property="og:image" content="https://epicsereno.github.io/superdiscount/assets/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -337,7 +337,7 @@ html{scroll-behavior:smooth}
 
 <script>
 (function(){
-  var DATA=null, lang='es';
+  var DATA=null, lang='en';
 
   function t(k){ return (DATA && DATA.ui[lang] && DATA.ui[lang][k]) || ''; }
   function esc(s){ return String(s).replace(/[&<>"']/g,function(c){
@@ -430,12 +430,8 @@ html{scroll-behavior:smooth}
     renderStatic(); renderStatus(); renderChips(); renderCats(); renderSvc();
   }
 
-  try{
-    var saved=localStorage.getItem('sd-lang');
-    if(saved==='en'||saved==='vi'||saved==='es'){
-      lang=saved;
-    }
-  }catch(e){}
+  // Dedicated English repository
+  lang = 'en';
 
   fetch('data/catalog.json')
     .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })

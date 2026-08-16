@@ -2,7 +2,7 @@
   "meta": {
     "version": "2.2.0",
     "note": "Showcase catalog. No prices, no SKUs, no cart fields. Products are shown, not sold. Expanded vendors pulse 2026-08-15 by team (Grok/Joker/Vader/Stan Lee). New brands + POD notes in docs/vendors.md v2.8.0.",
-    "defaultLocale": "es",
+    "defaultLocale": "en",
     "locales": [
       "es",
       "en",
