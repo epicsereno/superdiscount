@@ -15,9 +15,7 @@ Party supplies, household goods, snacks, table & chair rentals, spray paint, mar
 ## Project Structure
 
 ```
-index.html        Main landing page
-catalog.html      Showcase catalog page ("What We Carry")
-services.html     Counter services & party rental calculator
+index.html        Single-page application (Hero, Showcase Catalog, Services & Party Rental Calculator, About, Location & Hours)
 404.html          Custom 404 page
 css/styles.css    All site styles
 js/main.js        Mobile menu, header, theme & map behavior

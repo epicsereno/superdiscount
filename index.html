@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Super Discount El Sereno | Art Supplies, Party Rentals &amp; More in Los Angeles</title>
+  <title>Super Discount El Sereno | Art Supplies, Party Rentals &amp; Everyday Essentials in LA</title>
   <meta name="description" content="Super Discount El Sereno — neighborhood discount store since 1998. Ironlak spray paint, Molotow markers, party rentals, exotic sodas, household goods, ATM, EBT, copies, fax and keys. 3118 N Eastern Ave, Los Angeles.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://epicsereno.github.io/superdiscount/">
 
-  <!-- Open Graph (absolute URLs required for scrapers) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Super Discount El Sereno">
   <meta property="og:title" content="Super Discount El Sereno | Est. 1998">
@@ -27,22 +27,21 @@
   <meta name="twitter:description" content="Spray paint, markers, party rentals, exotic sodas, and everyday essentials in El Sereno, Los Angeles.">
   <meta name="twitter:image" content="https://epicsereno.github.io/superdiscount/assets/images/og-cover.png">
 
-  <!-- Theme color: keep this value identical in the shop repo -->
+  <!-- Theme color -->
   <meta name="theme-color" content="#0B0B0D">
 
   <!-- Icons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- Fonts: Barlow Condensed = varsity block, DM Sans = body, Kaushan Script = "Super" brand script -->
+  <!-- Fonts: Barlow Condensed, DM Sans, Kaushan Script -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;700&family=Kaushan+Script&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Theme boot: runs before paint to prevent flash. Dark is the brand default. -->
+  <!-- Theme boot script -->
   <script>
     (function () {
       try {
@@ -55,7 +54,7 @@
     })();
   </script>
 
-  <!-- LocalBusiness structured data (Store is a LocalBusiness subtype) -->
+  <!-- LocalBusiness structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -111,8 +110,8 @@
       </button>
 
       <ul class="nav-links" id="nav-links" data-nav>
-        <li><a href="catalog.html">What We Carry</a></li>
-        <li><a href="services.html">Services &amp; Rentals</a></li>
+        <li><a href="#catalog">What We Carry</a></li>
+        <li><a href="#services">Services &amp; Rentals</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#location">Visit</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -131,9 +130,15 @@
     <!-- ============ HERO ============ -->
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="container hero-content">
-        <p class="hero-est">El Sereno &middot; Est. 1998</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+          <span class="hero-est" style="margin:0;">El Sereno &middot; Est. 1998</span>
+          <div id="store-status-pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); font-size: 0.85rem; font-weight: 700; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.05em;">
+            <span id="status-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #3FD07A; box-shadow: 0 0 0 3px rgba(63,208,122,0.2);"></span>
+            <span id="status-text" style="color: var(--text);">Open Now</span>
+            <span id="status-hours" style="color: var(--text-muted); font-weight: 400; text-transform: none;">(9:30 AM &ndash; 9:00 PM)</span>
+          </div>
+        </div>
 
-        <!-- Live-text wordmark: crisp at every size, zero image weight -->
         <h1 class="wordmark" id="hero-title">
           <span class="wordmark-super">Super</span>
           <span class="wordmark-discount">Discount</span>
@@ -147,7 +152,6 @@
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=3118+N+Eastern+Ave+Los+Angeles+CA+90032" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get Directions</a>
         </div>
 
-        <!-- Signature element: the window sign wall -->
         <ul class="sign-wall" aria-label="Store highlights">
           <li>Spray Paint</li>
           <li>Markers</li>
@@ -176,76 +180,130 @@
       </div>
     </section>
 
-    <!-- ============ CATEGORIES / DEAL CARDS ============ -->
-    <section id="services" class="section" aria-labelledby="services-title">
+    <!-- ============ WHAT WE CARRY (CATALOG) ============ -->
+    <section id="catalog" class="section" aria-labelledby="catalog-title" style="border-top: 1px solid var(--line);">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What We Carry</p>
+          <h2 id="catalog-title">Urban Art Supplies, Exotic Sodas &amp; Daily Goods</h2>
+          <p style="color: var(--text-muted); max-width: 60ch; margin: 0.5rem auto 0;">Explore what&rsquo;s currently in stock at the shop. Products are displayed for showcase &amp; in-store pickup.</p>
+        </div>
+
+        <!-- Category Filter Chips -->
+        <nav aria-label="Product categories" style="margin-bottom: 2rem;">
+          <div id="category-chips" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+            <button type="button" class="chip active" data-cat="all">All Inventory</button>
+            <button type="button" class="chip" data-cat="art-supplies">Urban Art</button>
+            <button type="button" class="chip" data-cat="party-rentals">Party Goods</button>
+            <button type="button" class="chip" data-cat="beverages">Exotic Sodas</button>
+            <button type="button" class="chip" data-cat="everyday">Daily Basics</button>
+            <button type="button" class="chip" data-cat="collectibles">Collectibles</button>
+          </div>
+        </nav>
+
+        <!-- Product Cards Grid -->
+        <div id="catalog-grid" class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES & PARTY RENTALS ============ -->
+    <section id="services" class="section" aria-labelledby="services-title" style="background: var(--surface); border-top: 1px solid var(--line);">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Window-To-Window Convenience</p>
-          <h2 id="services-title">Dense aisles, loud signs, fast neighborhood errands</h2>
+          <h2 id="services-title">Everyday Counter Services &amp; Party Equipment Rentals</h2>
         </div>
 
-        <div class="card-grid">
+        <div class="card-grid" style="margin-bottom: 3rem;">
           <article class="deal-card">
-            <span class="deal-tag deal-tag--red">Fan Favorite</span>
-            <span class="deal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><rect x="8" y="8" width="8" height="13" rx="1.5"></rect><path d="M10 8V6h4v2"></path><path d="M11 3h2v3"></path><path d="M10 12h4"></path></svg>
-            </span>
-            <h3>Urban Art Supplies</h3>
-            <p>Ironlak gloss acrylic spray, Molotow ONE4ALL markers, refill ink, and caps &mdash; stocked deep, priced low.</p>
-          </article>
-
-          <article class="deal-card">
-            <span class="deal-tag">Rentals</span>
+            <span class="deal-tag deal-tag--red">Popular</span>
             <span class="deal-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M3 9h18"></path><path d="M5 9V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"></path><path d="M6 9v11"></path><path d="M18 9v11"></path><path d="M6 15h12"></path></svg>
             </span>
-            <h3>Party &amp; Rentals</h3>
-            <p>Tables, chairs, balloons, decorations, and last-minute supplies for birthdays, cookouts, and celebrations.</p>
+            <h3>Party Table &amp; Chair Rentals</h3>
+            <p>Hosting a birthday, cookout, or family event? Rent sturdy folding chairs and 6ft/8ft tables at low daily rates. Call ahead for reservation availability.</p>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-tag">Fast Service</span>
+            <span class="deal-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="8" cy="12" r="4"></circle><path d="M12 12h9"></path><path d="M18 12v3"></path><path d="M15 12v2"></path></svg>
+            </span>
+            <h3>Key Duplication</h3>
+            <p>Get extra house, mailbox, or padlock keys duplicated in under 2 minutes while you shop. Precise brass key cutting right at the counter.</p>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-tag">Office &amp; Admin</span>
+            <span class="deal-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            </span>
+            <h3>Copies &amp; Faxing</h3>
+            <p>High-resolution black &amp; white or color document copies, document scanning, and local or international fax transmission service.</p>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-tag deal-tag--gold">Payment</span>
+            <span class="deal-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            </span>
+            <h3>ATM &amp; EBT Accepted</h3>
+            <p>Clean, secure indoor ATM with low withdrawal fees. We welcome EBT / SNAP payment cards for all eligible food, beverages, and snacks.</p>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-tag deal-tag--red">Urban Art</span>
+            <span class="deal-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="8" y="8" width="8" height="13" rx="1.5"></rect><path d="M10 8V6h4v2"></path><path d="M11 3h2v3"></path></svg>
+            </span>
+            <h3>Cap &amp; Spray Advice</h3>
+            <p>Ironlak gloss acrylic spray, Molotow ONE4ALL markers, refill ink, and specialty nozzles &mdash; stocked deep with expert counter advice.</p>
           </article>
 
           <article class="deal-card">
             <span class="deal-tag deal-tag--gold">Cold Case</span>
             <span class="deal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6l1 5H8l1-5Z"></path><path d="M8 8h8l1 12a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1L8 8Z"></path><path d="M8.5 13h7"></path></svg>
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6l1 5H8l1-5Z"></path><path d="M8 8h8l1 12a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1L8 8Z"></path></svg>
             </span>
             <h3>Exotic Sodas &amp; Snacks</h3>
-            <p>Faygo, imports, flavor shots, and a rotating cold case of drinks you won&rsquo;t find at the chain stores.</p>
+            <p>Faygo, imports, flavor shots, and a rotating cold case of drinks you won&rsquo;t find at standard supermarket chains.</p>
           </article>
+        </div>
 
-          <article class="deal-card">
-            <span class="deal-tag">Daily Basics</span>
-            <span class="deal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M6 8h15l-2 9H8L6 8Z"></path><path d="M6 8 5 4H2"></path><path d="M9 20h.01"></path><path d="M18 20h.01"></path><path d="M9 12h8"></path></svg>
-            </span>
-            <h3>Everyday Essentials</h3>
-            <p>Cleaning supplies, paper goods, batteries, snacks, drinks, toys, and household items in one compact stop.</p>
-          </article>
+        <!-- Interactive Rental Estimator -->
+        <div style="max-width: 620px; margin: 0 auto; background: var(--bg); border: 1px solid var(--line); padding: 2.25rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <span style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--gold); font-size: 0.9rem;">Calculator</span>
+            <h3 style="margin: 0.25rem 0 0.5rem;">Party Equipment Rental Estimator</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Calculate your table and chair rental cost for instant store reservation.</p>
+          </div>
 
-          <article class="deal-card">
-            <span class="deal-tag deal-tag--gold">Counter Service</span>
-            <span class="deal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><circle cx="8" cy="12" r="4"></circle><path d="M12 12h9"></path><path d="M18 12v3"></path><path d="M15 12v2"></path></svg>
-            </span>
-            <h3>Quick Services</h3>
-            <p>ATM access, EBT/SNAP-friendly checkout, copies, fax, and keys cut while you wait.</p>
-          </article>
+          <form id="rental-estimator-form" onsubmit="return false;">
+            <div style="margin-bottom: 1.25rem;">
+              <label for="chairs-count" style="display: block; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem;">Folding Chairs ($1.50 / chair):</label>
+              <input type="number" id="chairs-count" min="0" max="300" value="20" style="width: 100%; padding: 0.75rem; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; font-family: var(--font-body);">
+            </div>
 
-          <article class="deal-card">
-            <span class="deal-tag">Rotating</span>
-            <span class="deal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M3 21v-5h5"></path><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M16 8h5V3"></path></svg>
-            </span>
-            <h3>Collectibles &amp; Finds</h3>
-            <p>Hot Wheels, team lanyards, tees, seasonal goods, novelty pieces, and useful odds and ends.</p>
-          </article>
+            <div style="margin-bottom: 1.5rem;">
+              <label for="tables-count" style="display: block; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem;">6ft Folding Tables ($8.00 / table):</label>
+              <input type="number" id="tables-count" min="0" max="60" value="4" style="width: 100%; padding: 0.75rem; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; font-family: var(--font-body);">
+            </div>
+
+            <div style="padding: 1.25rem; background: var(--surface); border-left: 4px solid var(--red); border-radius: 6px; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); display: block;">Estimated Total</span>
+                <strong id="estimated-total" style="font-size: 2.2rem; font-family: var(--font-display); color: var(--gold); line-height: 1;">$62.00</strong>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0; max-width: 220px; text-align: right;">*Estimate only. Call store to verify pickup dates &amp; deposit terms.</p>
+            </div>
+
+            <a href="tel:+13232238115" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box;">Call Store to Reserve &middot; (323) 223-8115</a>
+          </form>
         </div>
       </div>
     </section>
-
-    <!-- The SHOP BAND section lived here. Pulled along with the nav and footer
-         "Shop Online" links because the online store is not currently
-         published; restore it when there is a live storefront URL again.
-         Its .shop-band styles are still in css/styles.css. -->
 
     <!-- ============ ABOUT ============ -->
     <section id="about" class="section about-section" aria-labelledby="about-title">
@@ -307,7 +365,6 @@
           </div>
         </div>
 
-        <!-- Map facade: the ~1MB Google Maps embed loads only on request -->
         <div class="map-panel" data-map data-map-src="https://www.google.com/maps?q=3118%20N%20Eastern%20Ave%2C%20Los%20Angeles%2C%20CA%2090032&amp;output=embed">
           <button type="button" class="map-load" data-map-load>
             <span class="map-pin" aria-hidden="true">
