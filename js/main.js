@@ -93,25 +93,39 @@
   updateStoreStatus();
   setInterval(updateStoreStatus, 60000);
 
-  /* ---------- Dynamic Catalog Loader & Filter ---------- */
+  /* ---------- Dynamic Catalog Loader, Filter & Live Search ---------- */
   var catalogGrid = doc.getElementById('catalog-grid');
   var categoryChips = doc.getElementById('category-chips');
+  var searchInput = doc.getElementById('catalog-search');
+  var searchClear = doc.getElementById('catalog-search-clear');
   var catalogData = null;
   var currentCategory = 'all';
+  var currentQuery = '';
 
-  function renderCatalog(categoryFilter) {
+  function renderCatalog(categoryFilter, query) {
     if (!catalogGrid || !catalogData) return;
 
     var categories = catalogData.categories || [];
     var allProducts = [];
+    var q = (query || '').trim().toLowerCase();
 
     categories.forEach(function (cat) {
       if (categoryFilter === 'all' || cat.id === categoryFilter) {
         (cat.products || []).forEach(function (p) {
+          var name = (p.name && (p.name.en || p.name.es)) || 'Product';
+          var desc = (p.desc && (p.desc.en || p.desc.es)) || '';
+          var note = p.note || (cat.name && cat.name.en) || '';
+
+          // Live search filter
+          if (q) {
+            var haystack = (name + ' ' + desc + ' ' + note).toLowerCase();
+            if (haystack.indexOf(q) === -1) return;
+          }
+
           allProducts.push({
-            name: (p.name && (p.name.en || p.name.es)) || 'Product',
-            desc: (p.desc && (p.desc.en || p.desc.es)) || '',
-            note: p.note || cat.name.en || '',
+            name: name,
+            desc: desc,
+            note: note,
             img: p.img,
             widths: p.widths,
             color: p.color || '#2A2A32'
@@ -121,7 +135,10 @@
     });
 
     if (allProducts.length === 0) {
-      catalogGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No products found in this category.</div>';
+      var emptyMsg = q
+        ? 'No products match "' + q.replace(/</g, '&lt;') + '". Try another term or clear the search.'
+        : 'No products found in this category.';
+      catalogGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">' + emptyMsg + '</div>';
       return;
     }
 
@@ -154,12 +171,16 @@
     }).join('');
   }
 
+  function applyFilters() {
+    renderCatalog(currentCategory, currentQuery);
+  }
+
   // Fetch catalog JSON data
   fetch('data/catalog.json')
     .then(function (res) { return res.json(); })
     .then(function (data) {
       catalogData = data;
-      renderCatalog('all');
+      applyFilters();
     })
     .catch(function () {
       if (catalogGrid) {
@@ -177,7 +198,41 @@
       chip.classList.add('active');
 
       currentCategory = chip.getAttribute('data-cat') || 'all';
-      renderCatalog(currentCategory);
+      applyFilters();
+    });
+  }
+
+  // Live search input
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      currentQuery = searchInput.value || '';
+      if (searchClear) {
+        searchClear.style.display = currentQuery.trim() ? 'inline-flex' : 'none';
+      }
+      applyFilters();
+    });
+
+    // Keyboard: / focuses search
+    doc.addEventListener('keydown', function (e) {
+      if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        var tag = (doc.activeElement && doc.activeElement.tagName) || '';
+        if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      }
+    });
+  }
+
+  if (searchClear) {
+    searchClear.addEventListener('click', function () {
+      if (searchInput) {
+        searchInput.value = '';
+        currentQuery = '';
+        searchClear.style.display = 'none';
+        searchInput.focus();
+        applyFilters();
+      }
     });
   }
 

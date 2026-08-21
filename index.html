@@ -189,6 +189,24 @@
           <p style="color: var(--text-muted); max-width: 60ch; margin: 0.5rem auto 0;">Explore what&rsquo;s currently in stock at the shop. Products are displayed for showcase &amp; in-store pickup.</p>
         </div>
 
+        <!-- Live Search -->
+        <div style="max-width: 480px; margin: 0 auto 1.5rem; position: relative;">
+          <label for="catalog-search" class="sr-only">Search catalog</label>
+          <input
+            type="search"
+            id="catalog-search"
+            placeholder="Search spray, markers, sodas, rentals... (press /)"
+            autocomplete="off"
+            style="width: 100%; padding: 0.85rem 2.75rem 0.85rem 1rem; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 8px; font-size: 1rem; font-family: var(--font-body); box-sizing: border-box;"
+          >
+          <button
+            type="button"
+            id="catalog-search-clear"
+            aria-label="Clear search"
+            style="display: none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 4px 8px; font-size: 1.1rem; line-height: 1;"
+          >&times;</button>
+        </div>
+
         <!-- Category Filter Chips -->
         <nav aria-label="Product categories" style="margin-bottom: 2rem;">
           <div id="category-chips" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
@@ -368,7 +386,7 @@
         <div class="map-panel" data-map data-map-src="https://www.google.com/maps?q=3118%20N%20Eastern%20Ave%2C%20Los%20Angeles%2C%20CA%2090032&amp;output=embed">
           <button type="button" class="map-load" data-map-load>
             <span class="map-pin" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></path></svg>
             </span>
             <span class="map-load-text">Load interactive map</span>
             <span class="map-load-hint">Opens the Google Maps embed</span>
