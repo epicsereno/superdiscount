@@ -189,15 +189,24 @@
           <p style="color: var(--text-muted); max-width: 60ch; margin: 0.5rem auto 0;">Explore what&rsquo;s currently in stock at the shop. Products are displayed for showcase &amp; in-store pickup.</p>
         </div>
 
+        <!-- Instant Catalog Search -->
+        <div style="max-width: 480px; margin: 0 auto 1.5rem;">
+          <label for="catalog-search" class="sr-only">Search the catalog</label>
+          <input type="search" id="catalog-search" placeholder="Search spray paint, Faygo, Hot Wheels…" autocomplete="off" style="width: 100%; padding: 0.85rem 1.1rem; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 8px; font-size: 1rem; font-family: var(--font-body); box-sizing: border-box;">
+        </div>
+
         <!-- Category Filter Chips -->
         <nav aria-label="Product categories" style="margin-bottom: 2rem;">
           <div id="category-chips" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
             <button type="button" class="chip active" data-cat="all">All Inventory</button>
-            <button type="button" class="chip" data-cat="art-supplies">Urban Art</button>
-            <button type="button" class="chip" data-cat="party-rentals">Party Goods</button>
-            <button type="button" class="chip" data-cat="beverages">Exotic Sodas</button>
-            <button type="button" class="chip" data-cat="everyday">Daily Basics</button>
-            <button type="button" class="chip" data-cat="collectibles">Collectibles</button>
+            <button type="button" class="chip" data-cat="paint">Urban Art</button>
+            <button type="button" class="chip" data-cat="markers">Markers</button>
+            <button type="button" class="chip" data-cat="sodas">Exotic Sodas</button>
+            <button type="button" class="chip" data-cat="party">Party Goods</button>
+            <button type="button" class="chip" data-cat="toys">Collectibles</button>
+            <button type="button" class="chip" data-cat="apparel">Blank Apparel</button>
+            <button type="button" class="chip" data-cat="home">Daily Basics</button>
+            <button type="button" class="chip" data-cat="smoke">Smoke Shop</button>
           </div>
         </nav>
 

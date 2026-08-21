@@ -93,25 +93,37 @@
   updateStoreStatus();
   setInterval(updateStoreStatus, 60000);
 
-  /* ---------- Dynamic Catalog Loader & Filter ---------- */
+  /* ---------- Dynamic Catalog Loader, Filter & Search ---------- */
   var catalogGrid = doc.getElementById('catalog-grid');
   var categoryChips = doc.getElementById('category-chips');
+  var searchInput = doc.getElementById('catalog-search');
   var catalogData = null;
   var currentCategory = 'all';
+  var currentQuery = '';
 
-  function renderCatalog(categoryFilter) {
+  function renderCatalog(categoryFilter, query) {
     if (!catalogGrid || !catalogData) return;
 
     var categories = catalogData.categories || [];
     var allProducts = [];
+    var q = (query || '').trim().toLowerCase();
 
     categories.forEach(function (cat) {
       if (categoryFilter === 'all' || cat.id === categoryFilter) {
         (cat.products || []).forEach(function (p) {
+          var name = (p.name && (p.name.en || p.name.es)) || 'Product';
+          var desc = (p.desc && (p.desc.en || p.desc.es)) || '';
+          var note = p.note || cat.name.en || '';
+
+          // Search match: name or desc contains the query
+          if (q && name.toLowerCase().indexOf(q) === -1 && desc.toLowerCase().indexOf(q) === -1) {
+            return;
+          }
+
           allProducts.push({
-            name: (p.name && (p.name.en || p.name.es)) || 'Product',
-            desc: (p.desc && (p.desc.en || p.desc.es)) || '',
-            note: p.note || cat.name.en || '',
+            name: name,
+            desc: desc,
+            note: note,
             img: p.img,
             widths: p.widths,
             color: p.color || '#2A2A32'
@@ -121,7 +133,10 @@
     });
 
     if (allProducts.length === 0) {
-      catalogGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No products found in this category.</div>';
+      var emptyMsg = q
+        ? 'No products match "' + q + '". Try another term or clear the search.'
+        : 'No products found in this category.';
+      catalogGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">' + emptyMsg + '</div>';
       return;
     }
 
@@ -159,7 +174,7 @@
     .then(function (res) { return res.json(); })
     .then(function (data) {
       catalogData = data;
-      renderCatalog('all');
+      renderCatalog(currentCategory, currentQuery);
     })
     .catch(function () {
       if (catalogGrid) {
@@ -177,7 +192,30 @@
       chip.classList.add('active');
 
       currentCategory = chip.getAttribute('data-cat') || 'all';
-      renderCatalog(currentCategory);
+      renderCatalog(currentCategory, currentQuery);
+    });
+  }
+
+  // Instant search
+  if (searchInput) {
+    var searchTimer = null;
+    searchInput.addEventListener('input', function () {
+      currentQuery = searchInput.value;
+      // Debounce 120ms for snappy feel without thrashing
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () {
+        renderCatalog(currentCategory, currentQuery);
+      }, 120);
+    });
+
+    // Clear button support (Esc)
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        currentQuery = '';
+        renderCatalog(currentCategory, '');
+        searchInput.blur();
+      }
     });
   }
 
