@@ -112,6 +112,7 @@
       <ul class="nav-links" id="nav-links" data-nav>
         <li><a href="#catalog">What We Carry</a></li>
         <li><a href="#services">Services &amp; Rentals</a></li>
+        <li><a href="#roulette">Deal Roulette</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#location">Visit</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -208,8 +209,27 @@
       </div>
     </section>
 
+    <!-- ============ DEAL ROULETTE (NEW FEATURE) ============ -->
+    <section id="roulette" class="section" aria-labelledby="roulette-title" style="background: var(--surface); border-top: 1px solid var(--line);">
+      <div class="container" style="max-width: 640px; text-align: center;">
+        <div class="section-heading" style="margin-left: auto; margin-right: auto;">
+          <p class="eyebrow">Chaos Mode</p>
+          <h2 id="roulette-title">Deal Roulette</h2>
+          <p style="color: var(--text-muted); margin: 0.5rem auto 0;">Spin the wheel of neighborhood inventory. One random item. Pure store energy. No algorithms, just vibes.</p>
+        </div>
+
+        <button type="button" id="deal-roulette-btn" class="btn btn-primary" style="min-width: 220px; margin-bottom: 1.5rem;">
+          Spin for a Deal
+        </button>
+
+        <div id="deal-roulette-result" style="min-height: 140px; padding: 1.75rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.2s ease;">
+          <p style="margin:0;color:var(--text-muted);">Hit the button. Let the inventory decide.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ SERVICES & PARTY RENTALS ============ -->
-    <section id="services" class="section" aria-labelledby="services-title" style="background: var(--surface); border-top: 1px solid var(--line);">
+    <section id="services" class="section" aria-labelledby="services-title" style="border-top: 1px solid var(--line);">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Window-To-Window Convenience</p>

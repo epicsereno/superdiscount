@@ -98,6 +98,7 @@
   var categoryChips = doc.getElementById('category-chips');
   var catalogData = null;
   var currentCategory = 'all';
+  var allProductsFlat = []; // for Deal Roulette
 
   function renderCatalog(categoryFilter) {
     if (!catalogGrid || !catalogData) return;
@@ -159,6 +160,18 @@
     .then(function (res) { return res.json(); })
     .then(function (data) {
       catalogData = data;
+      // Flatten for roulette
+      allProductsFlat = [];
+      (data.categories || []).forEach(function (cat) {
+        (cat.products || []).forEach(function (p) {
+          allProductsFlat.push({
+            name: (p.name && (p.name.en || p.name.es)) || 'Product',
+            desc: (p.desc && (p.desc.en || p.desc.es)) || '',
+            note: p.note || (cat.name && cat.name.en) || 'In Stock',
+            category: (cat.name && cat.name.en) || ''
+          });
+        });
+      });
       renderCatalog('all');
     })
     .catch(function () {
@@ -179,6 +192,49 @@
       currentCategory = chip.getAttribute('data-cat') || 'all';
       renderCatalog(currentCategory);
     });
+  }
+
+  /* ---------- Deal Roulette (new feature) ---------- */
+  var hypeLines = [
+    'YO THIS ONE HITS DIFFERENT',
+    'THE BLOCK IS CALLING FOR THIS',
+    'GRAB IT BEFORE IT VANISHES',
+    'STRAIGHT OUT THE COLD CASE',
+    'PAINTER APPROVED ENERGY',
+    'PARTY MODE ACTIVATED',
+    'NEIGHBORHOOD CLASSIC',
+    'EL SERENO SPECIAL',
+    'STOCKED DEEP, MOVE FAST',
+    'THIS IS THE ONE'
+  ];
+
+  var rouletteBtn = doc.getElementById('deal-roulette-btn');
+  var rouletteResult = doc.getElementById('deal-roulette-result');
+
+  function spinDeal() {
+    if (!rouletteResult) return;
+    if (!allProductsFlat.length) {
+      rouletteResult.innerHTML = '<p style="margin:0;color:var(--text-muted);">Catalog still loading… try again in a sec.</p>';
+      return;
+    }
+
+    rouletteResult.classList.add('is-spinning');
+    rouletteResult.innerHTML = '<p style="margin:0;font-family:var(--font-display);letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);">SPINNING…</p>';
+
+    setTimeout(function () {
+      var item = allProductsFlat[Math.floor(Math.random() * allProductsFlat.length)];
+      var hype = hypeLines[Math.floor(Math.random() * hypeLines.length)];
+      rouletteResult.classList.remove('is-spinning');
+      rouletteResult.innerHTML =
+        '<span class="deal-tag deal-tag--red" style="position:static;display:inline-block;margin-bottom:0.5rem;">' + hype + '</span>' +
+        '<h3 style="margin:0 0 0.35rem;font-size:1.4rem;">' + item.name + '</h3>' +
+        '<p style="margin:0;color:var(--text-muted);font-size:0.95rem;">' + item.desc + '</p>' +
+        '<p style="margin:0.75rem 0 0;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-text);">' + item.note + (item.category ? ' · ' + item.category : '') + '</p>';
+    }, 650);
+  }
+
+  if (rouletteBtn) {
+    rouletteBtn.addEventListener('click', spinDeal);
   }
 
   /* ---------- Party Equipment Rental Calculator ---------- */
